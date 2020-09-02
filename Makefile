@@ -1,4 +1,5 @@
 install: install-deps
+	npm run build --production
 
 start:
 	heroku local -f Procfile.dev
