@@ -13,17 +13,6 @@ import App from './components/App';
 import { addMessage } from './actions';
 import UserContext from './components/UserContext';
 
-const getNickName = (locale = 'en') => {
-  const nickName = Cookies.get('nickName');
-  if (nickName) {
-    return nickName;
-  }
-  faker.locale = locale;
-  const newName = faker.name.findName();
-  Cookies.set('nickName', newName);
-  return newName;
-};
-
 export default (initState) => {
   const preloadedState = {
     messages: initState.messages,
@@ -41,7 +30,14 @@ export default (initState) => {
     store.dispatch(addMessage(attributes));
   });
 
-  const userNickName = getNickName('ru');
+  // eslint-disable-next-line functional/no-let
+  let userNickName = Cookies.get('nickName');
+
+  if (!userNickName) {
+    // faker.locale = 'ru';
+    userNickName = faker.name.findName();
+    Cookies.set('nickName', userNickName);
+  }
 
   ReactDOM.render(
     <Provider store={store}>
