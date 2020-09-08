@@ -4,9 +4,10 @@ import React from 'react';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-import MessagesBox from './MessageBox';
+import MessagesBox from './MessagesBox';
 import ChannelAddButton from './ChannelAddButton';
 import ChannelsNav from './ChannelsNav';
+import SendMessageForm from './SendMessageForm';
 
 export default (props) => {
   const { initState: { channels, currentChannelId } } = props;
@@ -17,8 +18,13 @@ export default (props) => {
         <ChannelAddButton />
         <ChannelsNav channels={channels} current={currentChannelId} />
       </Col>
-      <Col>
-        <MessagesBox />
+      <Col className="h-100">
+        <div className="d-flex flex-column h-100">
+          <MessagesBox />
+          <div className="mt-auto">
+            <SendMessageForm />
+          </div>
+        </div>
       </Col>
     </Row>
   );
