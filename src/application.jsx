@@ -30,7 +30,7 @@ export default (initialState) => {
 
   const preloadedState = {
     channels: initialState.channels,
-    messages: initialState.messages.filter((m) => m.channelId === userChannelId),
+    messages: initialState.messages,
     currentChannelId: userChannelId,
   };
 
@@ -41,12 +41,9 @@ export default (initialState) => {
 
   const webSocket = io();
 
-  webSocket.on('newMessage', ({ data: { attributes } }) => {
-    const { currentChannelId } = store.getState();
-    if (attributes.channelId === currentChannelId) {
-      // @ts-ignore
-      store.dispatch(addMessage(attributes));
-    }
+  webSocket.on('newMessage', ({ data }) => {
+    // @ts-ignore
+    store.dispatch(addMessage(data));
   });
 
   ReactDOM.render(

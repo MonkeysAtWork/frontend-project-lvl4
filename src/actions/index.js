@@ -8,15 +8,7 @@ import routes from '../routes';
 export const addMessage = createAction('MESSAGE_ADD');
 export const switchChannelSuccess = createAction('CHANNEL_SWITCH');
 
-export const switchChannel = (id) => async (dispatch) => {
-  // switchChannelRequest
-  try {
-    const url = routes.channelMessagesPath(id);
-    const { data: { data } } = await axios.get(url);
-    // console.log(data);
-    Cookies.set('currentChannelId', id);
-    dispatch(switchChannelSuccess({ id, data }));
-  } catch (err) {
-    throw new Error(err);
-  }
+export const switchChannel = (id) => (dispatch) => {
+  Cookies.set('currentChannelId', id);
+  dispatch(switchChannelSuccess(id));
 };

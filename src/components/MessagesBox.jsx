@@ -1,7 +1,10 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 
-const mapStateToProps = ({ messages }) => ({ messages });
+const mapStateToProps = (state) => {
+  const messages = state.messages.filter((m) => m.channelId === state.currentChannelId);
+  return { messages };
+};
 
 const MessagesBox = (props) => {
   const { messages } = props;

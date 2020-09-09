@@ -24,7 +24,7 @@ const ChannelsNav = (props) => {
         <Nav.Item key={id} as="li">
           <Nav.Link
             as="button"
-            className={cn('btn btn-block', { active: id === Number(currentChannelId) })}
+            className={cn('btn btn-block', { active: id === currentChannelId })}
             onClick={() => props.switchChannel(id)}
           >
             {name}

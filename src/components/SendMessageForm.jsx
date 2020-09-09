@@ -15,8 +15,8 @@ const Form = (props) => {
         const { currentChannelId } = props;
         const url = routes.channelMessagesPath(currentChannelId);
         const { nickName } = props;
-        const data = { attributes: { body: values.body, nickName } };
-        await axios.post(url, { data });
+        const attributes = { body: values.body, nickName, channelId: currentChannelId };
+        await axios.post(url, { data: { attributes } });
         actions.resetForm();
       } catch (err) {
         actions.setErrors({ body: err.message });
