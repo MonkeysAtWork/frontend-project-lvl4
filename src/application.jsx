@@ -7,42 +7,52 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
-import reducer from './reducers';
+import rootReducer from './reducers';
 
 import App from './components/App';
 import { addMessage } from './actions';
 import UserContext from './components/UserContext';
 
-export default (initState) => {
+const getUserName = () => {
+  const userName = Cookies.get('nickName');
+  if (userName) {
+    return userName;
+  }
+  // faker.locale = 'ru';
+  const newName = faker.name.findName();
+  Cookies.set('nickName', newName);
+  return newName;
+};
+
+export default (initialState) => {
+  const userNickName = getUserName();
+  const userChannelId = Number(Cookies.get('currentChannelId')) || initialState.currentChannelId;
+
   const preloadedState = {
-    messages: initState.messages,
+    channels: initialState.channels,
+    messages: initialState.messages.filter((m) => m.channelId === userChannelId),
+    currentChannelId: userChannelId,
   };
 
   const store = configureStore({
-    reducer: { messages: reducer },
+    reducer: rootReducer,
     preloadedState,
   });
 
   const webSocket = io();
 
   webSocket.on('newMessage', ({ data: { attributes } }) => {
-    // @ts-ignore
-    store.dispatch(addMessage(attributes));
+    const { currentChannelId } = store.getState();
+    if (attributes.channelId === currentChannelId) {
+      // @ts-ignore
+      store.dispatch(addMessage(attributes));
+    }
   });
-
-  // eslint-disable-next-line functional/no-let
-  let userNickName = Cookies.get('nickName');
-
-  if (!userNickName) {
-    // faker.locale = 'ru';
-    userNickName = faker.name.findName();
-    Cookies.set('nickName', userNickName);
-  }
 
   ReactDOM.render(
     <Provider store={store}>
       <UserContext.Provider value={userNickName}>
-        <App initState={initState} />
+        <App />
       </UserContext.Provider>
     </Provider>,
     document.getElementById('chat'),

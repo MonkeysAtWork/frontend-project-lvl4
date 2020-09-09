@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
 import cn from 'classnames';
 import axios from 'axios';
 import { useFormik } from 'formik';
@@ -6,13 +7,13 @@ import { useFormik } from 'formik';
 import routes from '../routes.js';
 import UserContext from './UserContext';
 
-const SendMessageForm = (props) => {
+const Form = (props) => {
   const formik = useFormik({
     initialValues: { body: '' },
     onSubmit: async (values, actions) => {
       try {
-        const channelId = 1;
-        const url = routes.channelMessagesPath(channelId);
+        const { currentChannelId } = props;
+        const url = routes.channelMessagesPath(currentChannelId);
         const { nickName } = props;
         const data = { attributes: { body: values.body, nickName } };
         await axios.post(url, { data });
@@ -52,8 +53,12 @@ const SendMessageForm = (props) => {
   );
 };
 
-export default () => (
+const mapStateToProps = ({ currentChannelId }) => ({ currentChannelId });
+
+const SendMessageForm = (props) => (
   <UserContext.Consumer>
-    {(value) => <SendMessageForm nickName={value} />}
+    {(value) => <Form nickName={value} currentChannelId={props.currentChannelId} />}
   </UserContext.Consumer>
 );
+
+export default connect(mapStateToProps)(SendMessageForm);
