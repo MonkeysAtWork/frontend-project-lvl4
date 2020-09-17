@@ -1,20 +1,42 @@
+// @ts-check
+
 import { createReducer } from '@reduxjs/toolkit';
 import { combineReducers } from 'redux';
 
 import * as actions from '../actions';
 
 const messages = createReducer([], {
-  [actions.addMessage]: (state, { payload: { attributes } }) => { state.push(attributes); },
+  [actions.newMessage]: (state, { payload: { attributes } }) => [...state, attributes],
+  [actions.removeChannel]: (state, { payload: { id } }) => state.filter((m) => m.channelId !== id),
 });
 
 const currentChannelId = createReducer([], {
-  [actions.switchChannelSuccess]: (state, { payload: id }) => id,
+  [actions.handleSwitchChannel]: (state, { payload: id }) => id,
 });
 
-const channels = createReducer([], (state) => state);
+const channels = createReducer([], {
+  [actions.newChannel]: (state, { payload: { attributes } }) => [...state, attributes],
+  [actions.removeChannel]: (state, { payload: { id } }) => state.filter((c) => c.id !== id),
+  [actions.renameChannel]: (state, { payload: { id, attributes } }) => {
+    const channel = state.find((c) => c.id === id);
+    channel.name = attributes.name;
+  },
+});
+
+const modalInfo = createReducer({ modalState: 'none' }, {
+  [actions.openModal]: (state, { payload }) => payload,
+  [actions.closeModal]: () => ({ modalState: 'none' }),
+});
+
+const channelsUIState = createReducer({ focusedButtonId: 'none' }, {
+  [actions.showActionButtins]: (state, { payload }) => payload,
+  [actions.hideActionButtins]: () => ({ focusedButtonId: 'none' }),
+});
 
 export default combineReducers({
-  channels,
   messages,
+  channels,
   currentChannelId,
+  channelsUIState,
+  modalInfo,
 });

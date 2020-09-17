@@ -65,7 +65,7 @@ export default (app, io, defaultState = {}) => {
       };
 
       reply.send(data);
-      io.emit('newChannel', data);
+      io.send({ type: 'newChannel', ...data });
     })
     .delete('/api/v1/channels/:id', (req, reply) => {
       const channelId = Number(req.params.id);
@@ -80,7 +80,7 @@ export default (app, io, defaultState = {}) => {
       };
 
       reply.send(data);
-      io.emit('removeChannel', data);
+      io.send({ type: 'removeChannel', ...data });
     })
     .patch('/api/v1/channels/:id', (req, reply) => {
       const channelId = Number(req.params.id);
@@ -97,7 +97,7 @@ export default (app, io, defaultState = {}) => {
         },
       };
       reply.send(data);
-      io.emit('renameChannel', data);
+      io.send({ type: 'renameChannel', ...data });
     })
     .get('/api/v1/channels/:channelId/messages', (req, reply) => {
       const messages = state.messages.filter((m) => m.channelId === Number(req.params.channelId));
@@ -128,6 +128,6 @@ export default (app, io, defaultState = {}) => {
         },
       };
       reply.send(data);
-      io.emit('newMessage', data);
+      io.send({ type: 'newMessage', ...data });
     });
 };

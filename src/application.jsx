@@ -1,16 +1,17 @@
 // @ts-check
 
-import io from 'socket.io-client';
-import Cookies from 'js-cookie';
-import faker from 'faker';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
-import rootReducer from './reducers';
 
+import io from 'socket.io-client';
+import Cookies from 'js-cookie';
+import faker from 'faker';
+
+import rootReducer from './reducers';
 import App from './components/App';
-import { addMessage } from './actions';
+import * as actions from './actions';
 import UserContext from './components/UserContext';
 
 const getUserName = () => {
@@ -41,9 +42,8 @@ export default (initialState) => {
 
   const webSocket = io();
 
-  webSocket.on('newMessage', ({ data }) => {
-    // @ts-ignore
-    store.dispatch(addMessage(data));
+  webSocket.on('message', ({ type, data }) => {
+    store.dispatch(actions[type](data));
   });
 
   ReactDOM.render(

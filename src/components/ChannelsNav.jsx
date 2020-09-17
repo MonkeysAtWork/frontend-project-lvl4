@@ -2,36 +2,79 @@
 
 import React from 'react';
 import { connect } from 'react-redux';
-import Nav from 'react-bootstrap/Nav';
 import cn from 'classnames';
 
-import * as actions from '../actions';
+import Nav from 'react-bootstrap/Nav';
+import Col from 'react-bootstrap/Col';
 
-const mapStateToProps = ({ channels, currentChannelId }) => (
-  { channels, currentChannelId }
+import * as actions from '../actions';
+import ChannelActionButton from './ChannelActionButton';
+
+const mapStateToProps = ({ channels, currentChannelId, channelsUIState }) => (
+  { channels, currentChannelId, focusedButtonId: channelsUIState.focusedButtonId }
 );
 
 const actionCreators = {
   switchChannel: actions.switchChannel,
+  showActionButtins: actions.showActionButtins,
+  hideActionButtins: actions.hideActionButtins,
 };
 
 const ChannelsNav = (props) => {
-  const { channels, currentChannelId } = props;
+  const {
+    channels,
+    currentChannelId,
+    switchChannel,
+    focusedButtonId,
+    showActionButtins,
+    hideActionButtins,
+  } = props;
+
+  const renderChannelButton = (item) => {
+    const isFocused = item.id === focusedButtonId;
+    const isActive = item.id === currentChannelId;
+
+    return (
+      <Nav.Item key={item.id} as="li">
+        <Nav.Link
+          as="button"
+          className={cn('btn btn-block', { active: isActive, 'list-group-item-secondary': isFocused && !isActive })}
+          onClick={() => switchChannel(item.id)}
+          onMouseEnter={() => showActionButtins({ focusedButtonId: item.id })}
+          onMouseLeave={() => hideActionButtins()}
+        >
+          <div className="d-flex align-items-center">
+            <div className="mr-auto">
+              {item.name}
+            </div>
+            {isFocused && item.removable && (
+              <>
+                <ChannelActionButton item={item} action="Rename" className="position-absolute" style={{ right: '45px', fontSize: '110%' }}>
+                  &#9998;
+                </ChannelActionButton>
+                <ChannelActionButton item={item} action="Delete" className="position-absolute" style={{ right: '25px', fontSize: '160%' }}>
+                  &times;
+                </ChannelActionButton>
+              </>
+            )}
+          </div>
+        </Nav.Link>
+      </Nav.Item>
+    );
+  };
 
   return (
-    <Nav variant="pills" as="ul" className="flex-column" fill>
-      {channels.map(({ id, name }) => (
-        <Nav.Item key={id} as="li">
-          <Nav.Link
-            as="button"
-            className={cn('btn btn-block', { active: id === currentChannelId })}
-            onClick={() => props.switchChannel(id)}
-          >
-            {name}
-          </Nav.Link>
-        </Nav.Item>
-      ))}
-    </Nav>
+    <Col xs={3} className="h-100 border-right overflow-auto">
+      <div className="d-flex mb-2">
+        <span className="align-self-center">Channels</span>
+        <ChannelActionButton action="Add" className="btn btn-link p-0 ml-auto" style={{ textDecoration: 'none', fontSize: '130%' }}>
+          +
+        </ChannelActionButton>
+      </div>
+      <Nav variant="pills" as="ul" className="flex-column" fill>
+        {channels.map(renderChannelButton)}
+      </Nav>
+    </Col>
   );
 };
 
