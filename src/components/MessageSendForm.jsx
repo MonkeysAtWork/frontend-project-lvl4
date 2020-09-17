@@ -33,9 +33,9 @@ const MessageSendForm = (props) => {
 
   const messageInput = useRef();
   useEffect(() => {
-    if (modalInfo.modalState === 'none') {
-      const input = messageInput.current;
-      input.focus();
+    if (modalInfo.type === 'none') {
+      // @ts-ignore
+      messageInput.current.focus();
     }
   }, [modalInfo, currentChannelId, formik.isSubmitting]);
 

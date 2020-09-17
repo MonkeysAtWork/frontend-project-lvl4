@@ -13,15 +13,15 @@ const ChannelActionButton = (props) => {
   const {
     children,
     item,
-    action,
+    type,
     openModal,
     className,
     style,
   } = props;
 
-  const handleClick = (e) => {
+  const handleOpenModal = (e) => {
     e.stopPropagation();
-    openModal({ modalState: action, item });
+    openModal({ type, item });
   };
 
   return (
@@ -29,7 +29,7 @@ const ChannelActionButton = (props) => {
       role="button"
       className={className}
       tabIndex={-1}
-      onClick={handleClick}
+      onClick={handleOpenModal}
       onKeyDown={() => { }}
       style={style}
     >

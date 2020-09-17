@@ -49,10 +49,10 @@ const ChannelsNav = (props) => {
             </div>
             {isFocused && item.removable && (
               <>
-                <ChannelActionButton item={item} action="Rename" className="position-absolute" style={{ right: '45px', fontSize: '110%' }}>
+                <ChannelActionButton item={item} type="Rename" className="position-absolute" style={{ right: '45px', fontSize: '110%' }}>
                   &#9998;
                 </ChannelActionButton>
-                <ChannelActionButton item={item} action="Delete" className="position-absolute" style={{ right: '25px', fontSize: '160%' }}>
+                <ChannelActionButton item={item} type="Delete" className="position-absolute" style={{ right: '25px', fontSize: '160%' }}>
                   &times;
                 </ChannelActionButton>
               </>
@@ -67,7 +67,7 @@ const ChannelsNav = (props) => {
     <Col xs={3} className="h-100 border-right overflow-auto">
       <div className="d-flex mb-2">
         <span className="align-self-center">Channels</span>
-        <ChannelActionButton action="Add" className="btn btn-link p-0 ml-auto" style={{ textDecoration: 'none', fontSize: '130%' }}>
+        <ChannelActionButton type="Add" className="btn btn-link p-0 ml-auto" style={{ textDecoration: 'none', fontSize: '130%' }}>
           +
         </ChannelActionButton>
       </div>

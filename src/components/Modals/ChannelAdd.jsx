@@ -14,22 +14,19 @@ import { useFormik } from 'formik';
 import * as actions from '../../actions';
 import routes from '../../routes.js';
 
-const mapStateToProps = ({ modalInfo: { modalState } }) => ({ modalState });
-
 const actionCreators = {
   closeModal: actions.closeModal,
 };
 
+const validate = (value) => {
+  if (!value) {
+    return 'Channel name don\'t must be empty or consist of spaces only';
+  }
+  return '';
+};
+
 const ChannelAddModal = (props) => {
-  const { closeModal, modalState } = props;
-
-  const validate = (value) => {
-    if (!value) {
-      return 'Channel name don\'t must be empty or consist of spaces only';
-    }
-    return '';
-  };
-
+  const { closeModal } = props;
   const formik = useFormik({
     initialValues: { name: '' },
     onSubmit: async (values, { setErrors }) => {
@@ -52,15 +49,13 @@ const ChannelAddModal = (props) => {
 
   const channelNameInput = useRef();
   useEffect(() => {
-    if (channelNameInput.current) {
-      const input = channelNameInput.current;
-      input.focus();
-    }
+    // @ts-ignore
+    channelNameInput.current.focus();
   }, [formik.isSubmitting]);
 
   return (
     <Modal
-      show={modalState === 'Add'}
+      show
       onHide={() => closeModal()}
       backdrop={!formik.isSubmitting}
       keyboard={!formik.isSubmitting}
@@ -106,4 +101,4 @@ const ChannelAddModal = (props) => {
   );
 };
 
-export default connect(mapStateToProps, actionCreators)(ChannelAddModal);
+export default connect(null, actionCreators)(ChannelAddModal);

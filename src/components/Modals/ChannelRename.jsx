@@ -14,15 +14,15 @@ import axios from 'axios';
 import * as actions from '../../actions';
 import routes from '../../routes.js';
 
-const mapStateToProps = ({ modalInfo: { modalState, item } }) => (
-  { modalState, currentChannel: item });
+const mapStateToProps = ({ modalInfo: { item } }) => (
+  { currentChannel: item });
 
 const actionCreators = {
   closeModal: actions.closeModal,
 };
 
 const ChannelRenameModal = (props) => {
-  const { closeModal, modalState, currentChannel } = props;
+  const { closeModal, currentChannel } = props;
 
   const validate = (value) => {
     if (value === currentChannel.name) {
@@ -56,15 +56,13 @@ const ChannelRenameModal = (props) => {
 
   const channelNameInput = useRef();
   useEffect(() => {
-    if (channelNameInput) {
-      const input = channelNameInput.current;
-      input.select();
-    }
+    // @ts-ignore
+    channelNameInput.current.select();
   }, [formik.isSubmitting]);
 
   return (
     <Modal
-      show={modalState === 'Rename'}
+      show
       onHide={() => closeModal()}
       backdrop={!formik.isSubmitting}
       keyboard={!formik.isSubmitting}
@@ -103,7 +101,7 @@ const ChannelRenameModal = (props) => {
           disabled={formik.isSubmitting}
         >
           {formik.isSubmitting && <span className="spinner-border spinner-border-sm ml-2" />}
-          {formik.isSubmitting ? 'Appliyng...' : 'Rename'}
+          {formik.isSubmitting ? 'Renaming...' : 'Rename'}
         </Button>
       </Modal.Footer>
     </Modal>

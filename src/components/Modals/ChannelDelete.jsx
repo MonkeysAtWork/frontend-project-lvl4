@@ -13,10 +13,9 @@ import axios from 'axios';
 import * as actions from '../../actions';
 import routes from '../../routes.js';
 
-const mapStateToProps = ({ modalInfo: { item, modalState }, currentChannelId }) => ({
+const mapStateToProps = ({ modalInfo: { item }, currentChannelId }) => ({
   activeChannelId: currentChannelId,
   currentChannel: item,
-  modalState,
 });
 
 const actionCreators = {
@@ -26,7 +25,6 @@ const actionCreators = {
 
 const ChannelDeleteModal = (props) => {
   const {
-    modalState,
     closeModal,
     switchChannel,
     currentChannel,
@@ -51,7 +49,7 @@ const ChannelDeleteModal = (props) => {
 
   return (
     <Modal
-      show={modalState === 'Delete'}
+      show
       onHide={() => closeModal()}
       backdrop={!formik.isSubmitting}
       keyboard={!formik.isSubmitting}
@@ -83,7 +81,6 @@ const ChannelDeleteModal = (props) => {
           variant="danger"
           onClick={() => formik.handleSubmit()}
           disabled={formik.isSubmitting}
-          tabIndex={0}
         >
           {formik.isSubmitting && <span className="spinner-border spinner-border-sm ml-2" />}
           {formik.isSubmitting ? 'Deleting...' : 'Delete'}
