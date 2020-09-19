@@ -15,13 +15,12 @@ import UserContext from './UserContext';
 const mapStateToProps = ({ currentChannelId, modalInfo }) => ({ currentChannelId, modalInfo });
 
 const MessageSendForm = (props) => {
-  const { currentChannelId, modalInfo } = props;
+  const { currentChannelId, modalInfo, nickName } = props;
   const formik = useFormik({
     initialValues: { body: '' },
     onSubmit: async (values, { resetForm, setErrors }) => {
       try {
         const url = routes.channelMessagesPath(currentChannelId);
-        const { nickName } = props;
         const attributes = { body: values.body, nickName, channelId: currentChannelId };
         await axios.post(url, { data: { attributes } });
         resetForm();

@@ -6,9 +6,9 @@ import ChannelDelete from './ChannelDelete';
 import ChannelRename from './ChannelRename';
 
 const modals = {
-  Add: ChannelAdd,
-  Delete: ChannelDelete,
-  Rename: ChannelRename,
+  adding: ChannelAdd,
+  deleting: ChannelDelete,
+  renaming: ChannelRename,
 };
 
 const mapStateToProps = ({ modalInfo: { type } }) => ({ type });

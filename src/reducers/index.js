@@ -6,18 +6,18 @@ import { combineReducers } from 'redux';
 import * as actions from '../actions';
 
 const messages = createReducer([], {
-  [actions.newMessage.type]: (state, { payload: { attributes } }) => [...state, attributes],
-  [actions.removeChannel.type]: (state, { payload: { id } }) => (
+  [actions.addMessage.type]: (state, { payload: { attributes } }) => [...state, attributes],
+  [actions.deleteChannel.type]: (state, { payload: { id } }) => (
     state.filter((m) => m.channelId !== id)),
 });
 
 const currentChannelId = createReducer([], {
-  [actions.handleSwitchChannel.type]: (state, { payload: id }) => id,
+  [actions.switchChannel.type]: (state, { payload: id }) => id,
 });
 
 const channels = createReducer([], {
-  [actions.newChannel.type]: (state, { payload: { attributes } }) => [...state, attributes],
-  [actions.removeChannel.type]: (state, { payload: { id } }) => state.filter((c) => c.id !== id),
+  [actions.addChannel.type]: (state, { payload: { attributes } }) => [...state, attributes],
+  [actions.deleteChannel.type]: (state, { payload: { id } }) => state.filter((c) => c.id !== id),
   [actions.renameChannel.type]: (state, { payload: { id, attributes } }) => {
     const channel = state.find((c) => c.id === id);
     channel.name = attributes.name;
