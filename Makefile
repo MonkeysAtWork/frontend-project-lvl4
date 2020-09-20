@@ -15,7 +15,7 @@ install-deps:
 
 build:
 	rm -rf dist
-	npm run build
+	npm run build --production
 
 test:
 	npm test -s

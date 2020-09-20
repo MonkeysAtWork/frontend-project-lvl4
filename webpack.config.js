@@ -1,6 +1,7 @@
 // @ts-check
 
-// const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
 const isProduction = process.env.NODE_ENV === 'production';
 // const isDevelopment = !isProduction;
 console.log('isProduction', isProduction);
@@ -21,7 +22,7 @@ module.exports = {
     publicPath: '/assets/',
   },
   plugins: [
-    // new MiniCssExtractPlugin(),
+    new MiniCssExtractPlugin(),
   ],
   module: {
     rules: [

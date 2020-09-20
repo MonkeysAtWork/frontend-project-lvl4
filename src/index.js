@@ -13,7 +13,7 @@ import faker from 'faker';
 import cookies from 'js-cookie';
 import io from 'socket.io-client';
 
-import startApp from './application';
+import run from './init';
 
 const getUserName = () => {
   const userName = cookies.get('nickName');
@@ -46,4 +46,4 @@ const userData = {
 
 const webSocket = io();
 
-startApp(gon, userData, webSocket);
+run(gon, userData, webSocket);

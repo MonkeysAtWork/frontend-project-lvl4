@@ -5,10 +5,9 @@ import ReactDOM from 'react-dom';
 import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
 
-import rootReducer from './reducers';
+import rootReducer, { actions } from './slices';
 import App from './components/App';
-import * as actions from './actions';
-import UserContext from './components/UserContext';
+import UserContext from './UserContext';
 
 const eventsActions = {
   newMessage: actions.addMessage,

@@ -11,7 +11,7 @@ import Button from 'react-bootstrap/Button';
 import { useFormik } from 'formik';
 import axios from 'axios';
 
-import * as actions from '../../actions';
+import { actions } from '../../slices';
 import routes from '../../routes.js';
 
 const mapStateToProps = ({ modalInfo: { item } }) => (
@@ -21,24 +21,25 @@ const actionCreators = {
   closeModal: actions.closeModal,
 };
 
+const validate = (value, oldValue) => {
+  if (value === oldValue) {
+    return 'The same name!';
+  }
+  if (!value) {
+    return 'Channel name don\'t must be empty or consist of spaces only';
+  }
+  return '';
+};
+
 const ChannelRenameModal = (props) => {
   const { closeModal, currentChannel } = props;
-
-  const validate = (value) => {
-    if (value === currentChannel.name) {
-      return 'The same name!';
-    }
-    if (!value) {
-      return 'Channel name don\'t must be empty or consist of spaces only';
-    }
-    return '';
-  };
 
   const formik = useFormik({
     initialValues: { name: currentChannel.name },
     onSubmit: async (values, { setErrors }) => {
       const name = values.name.trim();
-      const error = validate(name);
+      const error = validate(name, currentChannel.name);
+
       if (error) {
         setErrors({ name: error });
         return;
@@ -46,6 +47,7 @@ const ChannelRenameModal = (props) => {
       try {
         const url = routes.channelPath(currentChannel.id);
         const attributes = { ...currentChannel, name };
+
         await axios.patch(url, { data: { attributes } });
         closeModal();
       } catch (err) {

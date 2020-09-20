@@ -11,7 +11,7 @@ import Button from 'react-bootstrap/Button';
 import axios from 'axios';
 import { useFormik } from 'formik';
 
-import * as actions from '../../actions';
+import { actions } from '../../slices';
 import routes from '../../routes.js';
 
 const actionCreators = {
@@ -27,11 +27,13 @@ const validate = (value) => {
 
 const ChannelAddModal = (props) => {
   const { closeModal } = props;
+
   const formik = useFormik({
     initialValues: { name: '' },
     onSubmit: async (values, { setErrors }) => {
       const name = values.name.trim();
       const error = validate(name);
+
       if (error) {
         setErrors({ name: error });
         return;
@@ -39,6 +41,7 @@ const ChannelAddModal = (props) => {
       try {
         const url = routes.channelsPath();
         const attributes = { name };
+
         await axios.post(url, { data: { attributes } });
         closeModal();
       } catch (err) {

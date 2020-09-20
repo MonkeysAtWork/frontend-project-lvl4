@@ -1,6 +1,6 @@
 // @ts-check
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useContext } from 'react';
 import { connect } from 'react-redux';
 import cn from 'classnames';
 
@@ -10,12 +10,14 @@ import axios from 'axios';
 import { useFormik } from 'formik';
 
 import routes from '../routes.js';
-import UserContext from './UserContext';
+import UserContext from '../UserContext';
 
 const mapStateToProps = ({ currentChannelId, modalInfo }) => ({ currentChannelId, modalInfo });
 
 const MessageSendForm = (props) => {
-  const { currentChannelId, modalInfo, nickName } = props;
+  const { currentChannelId, modalInfo } = props;
+  const nickName = useContext(UserContext);
+
   const formik = useFormik({
     initialValues: { body: '' },
     onSubmit: async (values, { resetForm, setErrors }) => {
@@ -62,10 +64,4 @@ const MessageSendForm = (props) => {
   );
 };
 
-const ConnectedForm = connect(mapStateToProps)(MessageSendForm);
-
-export default () => (
-  <UserContext.Consumer>
-    {(value) => <ConnectedForm nickName={value} />}
-  </UserContext.Consumer>
-);
+export default connect(mapStateToProps)(MessageSendForm);

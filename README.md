@@ -1,3 +1,5 @@
+[![Actions Status](https://github.com/MonkeysAtWork/frontend-project-lvl4/workflows/Node%20CI/badge.svg)](https://github.com/MonkeysAtWork/frontend-project-lvl4/actions)
+
 This is study project that implements Slack - [Heroku link](https://damp-beach-05856.herokuapp.com/)
 
 ## Install
