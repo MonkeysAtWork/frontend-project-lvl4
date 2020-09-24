@@ -7,8 +7,8 @@ import Col from 'react-bootstrap/Col';
 
 import MessagesBox from './MessagesBox';
 import ChannelsNav from './ChannelsNav';
-import MessageSendForm from './MessageSendForm';
-import Modal from './Modals/Modal';
+import MessageSendForm from './Forms/MessageSend';
+import Modal from './Modal';
 
 const App = () => (
   <Row className="h-100 pb-3">

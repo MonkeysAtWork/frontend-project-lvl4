@@ -19,9 +19,9 @@ const MessagesBox = (props) => {
   return (
     <div id="messages-box" className="chat-messages overflow-auto mb-3">
       {messages.length > 0 && messages.map(
-        ({ id, nickName, body }) => (
+        ({ id, nickname, body }) => (
           <div key={id}>
-            <b>{nickName}</b>
+            <b>{nickname}</b>
             :&nbsp;
             {body}
           </div>

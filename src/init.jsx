@@ -1,7 +1,6 @@
 // @ts-check
 
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
 
@@ -26,12 +25,11 @@ export default (preloadedState, userData, webSocket) => {
     store.dispatch(eventsActions[type](data));
   });
 
-  ReactDOM.render(
+  return (
     <Provider store={store}>
       <UserContext.Provider value={userData.name}>
         <App />
       </UserContext.Provider>
-    </Provider>,
-    document.getElementById('chat'),
+    </Provider>
   );
 };

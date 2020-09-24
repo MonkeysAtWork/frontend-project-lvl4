@@ -7,6 +7,8 @@ import Rollbar from 'rollbar';
 
 import '../assets/application.scss';
 
+import ReactDOM from 'react-dom';
+
 // @ts-ignore
 import gon from 'gon';
 import faker from 'faker';
@@ -16,13 +18,13 @@ import io from 'socket.io-client';
 import run from './init';
 
 const getUserName = () => {
-  const userName = cookies.get('nickName');
+  const userName = cookies.get('nickame');
   if (userName) {
     return userName;
   }
   // faker.locale = 'ru';
   const newName = faker.name.findName();
-  cookies.set('nickName', newName);
+  cookies.set('nickame', newName, { expires: 365 });
   return newName;
 };
 
@@ -46,4 +48,7 @@ const userData = {
 
 const webSocket = io();
 
-run(gon, userData, webSocket);
+ReactDOM.render(
+  run(gon, userData, webSocket),
+  document.getElementById('chat'),
+);

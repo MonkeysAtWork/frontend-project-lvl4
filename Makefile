@@ -18,7 +18,10 @@ build:
 	npm run build --production
 
 test:
-	npm test -s
+	npm test
+
+test-watch:
+	npm test -- --watch
 
 test-coverage:
 	npm test -- --coverage

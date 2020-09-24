@@ -1,0 +1,1830 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`add channel 1`] = `
+<div
+  class="modal-content"
+>
+  <div
+    class="modal-header"
+  >
+    <div
+      class="modal-title h4"
+    >
+      Add channel
+    </div>
+    <button
+      class="close"
+      type="button"
+    >
+      <span
+        aria-hidden="true"
+      >
+        ×
+      </span>
+      <span
+        class="sr-only"
+      >
+        Close
+      </span>
+    </button>
+  </div>
+  <div
+    class="modal-body"
+  >
+    <form>
+      <div
+        class="m-0 form-group"
+      >
+        <input
+          class="form-control"
+          data-testid="channel-add-input"
+          name="name"
+          value=""
+        />
+        <div
+          class="mt-2 invalid-feedback"
+        />
+        <div
+          class="d-flex justify-content-end mt-3"
+        >
+          <button
+            class="mr-2 btn btn-secondary"
+            type="button"
+          >
+            Close
+          </button>
+          <button
+            class="btn btn-primary"
+            type="submit"
+          >
+            Add
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`add channel 2`] = `
+<body
+  class=""
+  style="padding-right: 0px;"
+>
+  <div>
+    <div
+      class="h-100 pb-3 row"
+    >
+      <div
+        class="h-100 border-right overflow-auto col-3"
+      >
+        <div
+          class="d-flex mb-2"
+        >
+          <span
+            class="align-self-center"
+          >
+            Channels
+          </span>
+          <div
+            class="btn btn-link p-0 ml-auto"
+            role="button"
+            tabindex="-1"
+          >
+            <big>
+              +
+            </big>
+          </div>
+        </div>
+        <ul
+          class="flex-column nav nav-pills nav-fill"
+        >
+          <li
+            class="nav-item"
+          >
+            <button
+              class="btn-block text-left nav-link mb-2 btn btn-primary"
+              type="button"
+            >
+              general
+            </button>
+          </li>
+          <li
+            class="nav-item"
+          >
+            <button
+              class="btn-block text-left nav-link mb-2 btn btn-light"
+              type="button"
+            >
+              random
+            </button>
+          </li>
+        </ul>
+      </div>
+      <div
+        class="h-100 col"
+      >
+        <div
+          class="d-flex flex-column h-100"
+        >
+          <div
+            class="chat-messages overflow-auto mb-3"
+            id="messages-box"
+          />
+          <div
+            class="mt-auto"
+          >
+            <form
+              data-testid="message-send-form"
+            >
+              <div
+                class="form-group"
+              >
+                <input
+                  class="form-control"
+                  data-testid="message-send-input"
+                  name="body"
+                  value=""
+                />
+                <div
+                  class="d-block invalid-feedback"
+                >
+                   
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`add channel 3`] = `
+<div
+  class="modal-content"
+>
+  <div
+    class="modal-header"
+  >
+    <div
+      class="modal-title h4"
+    >
+      Add channel
+    </div>
+    <button
+      class="close"
+      type="button"
+    >
+      <span
+        aria-hidden="true"
+      >
+        ×
+      </span>
+      <span
+        class="sr-only"
+      >
+        Close
+      </span>
+    </button>
+  </div>
+  <div
+    class="modal-body"
+  >
+    <form>
+      <div
+        class="m-0 form-group"
+      >
+        <input
+          class="is-invalid form-control"
+          data-testid="channel-add-input"
+          name="name"
+          value=""
+        />
+        <div
+          class="mt-2 invalid-feedback"
+        >
+          Channel name don't must be empty or consist of spaces only
+        </div>
+        <div
+          class="d-flex justify-content-end mt-3"
+        >
+          <button
+            class="mr-2 btn btn-secondary"
+            type="button"
+          >
+            Close
+          </button>
+          <button
+            class="btn btn-primary"
+            type="submit"
+          >
+            Add
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`add channel 4`] = `
+<div
+  class="modal-content"
+>
+  <div
+    class="modal-header"
+  >
+    <div
+      class="modal-title h4"
+    >
+      Add channel
+    </div>
+    <button
+      class="close"
+      type="button"
+    >
+      <span
+        aria-hidden="true"
+      >
+        ×
+      </span>
+      <span
+        class="sr-only"
+      >
+        Close
+      </span>
+    </button>
+  </div>
+  <div
+    class="modal-body"
+  >
+    <form>
+      <div
+        class="m-0 form-group"
+      >
+        <input
+          class="is-invalid is-loading form-control"
+          data-testid="channel-add-input"
+          disabled=""
+          name="name"
+          value="test channel"
+        />
+        <div
+          class="mt-2 invalid-feedback"
+        >
+          Channel name don't must be empty or consist of spaces only
+        </div>
+        <div
+          class="d-flex justify-content-end mt-3"
+        >
+          <button
+            class="mr-2 btn btn-secondary"
+            disabled=""
+            type="button"
+          >
+            Close
+          </button>
+          <button
+            class="btn btn-primary"
+            disabled=""
+            type="submit"
+          >
+            <span
+              class="spinner-border spinner-border-sm ml-2"
+            />
+            Adding...
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`add channel 5`] = `
+<div
+  class="modal-content"
+>
+  <div
+    class="modal-header"
+  >
+    <div
+      class="modal-title h4"
+    >
+      Add channel
+    </div>
+    <button
+      class="close"
+      type="button"
+    >
+      <span
+        aria-hidden="true"
+      >
+        ×
+      </span>
+      <span
+        class="sr-only"
+      >
+        Close
+      </span>
+    </button>
+  </div>
+  <div
+    class="modal-body"
+  >
+    <form>
+      <div
+        class="m-0 form-group"
+      >
+        <input
+          class="is-invalid form-control"
+          data-testid="channel-add-input"
+          name="name"
+          value="test channel"
+        />
+        <div
+          class="mt-2 invalid-feedback"
+        >
+          Network Error
+        </div>
+        <div
+          class="d-flex justify-content-end mt-3"
+        >
+          <button
+            class="mr-2 btn btn-secondary"
+            type="button"
+          >
+            Close
+          </button>
+          <button
+            class="btn btn-primary"
+            type="submit"
+          >
+            Add
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`add channel 6`] = `
+<ul
+  class="flex-column nav nav-pills nav-fill"
+>
+  <li
+    class="nav-item"
+  >
+    <button
+      class="btn-block text-left nav-link mb-2 btn btn-primary"
+      type="button"
+    >
+      general
+    </button>
+  </li>
+  <li
+    class="nav-item"
+  >
+    <button
+      class="btn-block text-left nav-link mb-2 btn btn-light"
+      type="button"
+    >
+      random
+    </button>
+  </li>
+  <li
+    class="nav-item"
+  >
+    <div
+      class="d-flex mb-2 dropdown btn-group"
+      role="group"
+    >
+      <button
+        class="btn-block text-left nav-link btn btn-light"
+        type="button"
+      >
+        test channel
+      </button>
+      <button
+        aria-expanded="false"
+        aria-haspopup="true"
+        class="dropdown-toggle dropdown-toggle-split btn btn-light"
+        type="button"
+      />
+    </div>
+  </li>
+</ul>
+`;
+
+exports[`rename and delete channel 1`] = `
+<body
+  class=""
+  style="padding-right: 0px;"
+>
+  <div>
+    <div
+      class="h-100 pb-3 row"
+    >
+      <div
+        class="h-100 border-right overflow-auto col-3"
+      >
+        <div
+          class="d-flex mb-2"
+        >
+          <span
+            class="align-self-center"
+          >
+            Channels
+          </span>
+          <div
+            class="btn btn-link p-0 ml-auto"
+            role="button"
+            tabindex="-1"
+          >
+            <big>
+              +
+            </big>
+          </div>
+        </div>
+        <ul
+          class="flex-column nav nav-pills nav-fill"
+        >
+          <li
+            class="nav-item"
+          >
+            <button
+              class="btn-block text-left nav-link mb-2 btn btn-primary"
+              type="button"
+            >
+              general
+            </button>
+          </li>
+          <li
+            class="nav-item"
+          >
+            <button
+              class="btn-block text-left nav-link mb-2 btn btn-light"
+              type="button"
+            >
+              random
+            </button>
+          </li>
+          <li
+            class="nav-item"
+          >
+            <div
+              class="d-flex mb-2 dropdown btn-group"
+              role="group"
+            >
+              <button
+                class="btn-block text-left nav-link btn btn-light"
+                type="button"
+              >
+                Foo
+              </button>
+              <button
+                aria-expanded="false"
+                aria-haspopup="true"
+                class="dropdown-toggle dropdown-toggle-split btn btn-light"
+                type="button"
+              />
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div
+        class="h-100 col"
+      >
+        <div
+          class="d-flex flex-column h-100"
+        >
+          <div
+            class="chat-messages overflow-auto mb-3"
+            id="messages-box"
+          />
+          <div
+            class="mt-auto"
+          >
+            <form
+              data-testid="message-send-form"
+            >
+              <div
+                class="form-group"
+              >
+                <input
+                  class="form-control"
+                  data-testid="message-send-input"
+                  name="body"
+                  value=""
+                />
+                <div
+                  class="d-block invalid-feedback"
+                >
+                   
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`rename and delete channel 2`] = `
+<ul
+  class="flex-column nav nav-pills nav-fill"
+>
+  <li
+    class="nav-item"
+  >
+    <button
+      class="btn-block text-left nav-link mb-2 btn btn-primary"
+      type="button"
+    >
+      general
+    </button>
+  </li>
+  <li
+    class="nav-item"
+  >
+    <button
+      class="btn-block text-left nav-link mb-2 btn btn-light"
+      type="button"
+    >
+      random
+    </button>
+  </li>
+  <li
+    class="nav-item"
+  >
+    <div
+      class="d-flex mb-2 show dropdown btn-group"
+      role="group"
+    >
+      <button
+        class="btn-block text-left nav-link btn btn-light"
+        type="button"
+      >
+        Foo
+      </button>
+      <button
+        aria-expanded="true"
+        aria-haspopup="true"
+        class="dropdown-toggle dropdown-toggle-split btn btn-light"
+        type="button"
+      />
+      <div
+        aria-labelledby=""
+        class="dropdown-menu show"
+        style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; margin: 0px;"
+        x-placement="bottom-start"
+      >
+        <a
+          class="dropdown-item"
+          href="#"
+          role="button"
+        >
+          Rename
+        </a>
+        <a
+          class="dropdown-item"
+          href="#"
+          role="button"
+        >
+          Delete
+        </a>
+      </div>
+    </div>
+  </li>
+</ul>
+`;
+
+exports[`rename and delete channel 3`] = `
+<div
+  class="modal-content"
+>
+  <div
+    class="modal-header"
+  >
+    <div
+      class="modal-title h4"
+    >
+      Rename channel
+    </div>
+    <button
+      class="close"
+      type="button"
+    >
+      <span
+        aria-hidden="true"
+      >
+        ×
+      </span>
+      <span
+        class="sr-only"
+      >
+        Close
+      </span>
+    </button>
+  </div>
+  <div
+    class="modal-body"
+  >
+    <form>
+      <div
+        class="m-0 form-group"
+      >
+        <input
+          class="form-control"
+          name="name"
+          value="Foo"
+        />
+        <div
+          class="invalid-feedback"
+        />
+        <div
+          class="d-flex justify-content-end mt-3"
+        >
+          <button
+            class="mr-2 btn btn-secondary"
+            type="button"
+          >
+            Close
+          </button>
+          <button
+            class="btn btn-primary"
+            type="submit"
+          >
+            Rename
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`rename and delete channel 4`] = `
+<div
+  class="modal-content"
+>
+  <div
+    class="modal-header"
+  >
+    <div
+      class="modal-title h4"
+    >
+      Rename channel
+    </div>
+    <button
+      class="close"
+      type="button"
+    >
+      <span
+        aria-hidden="true"
+      >
+        ×
+      </span>
+      <span
+        class="sr-only"
+      >
+        Close
+      </span>
+    </button>
+  </div>
+  <div
+    class="modal-body"
+  >
+    <form>
+      <div
+        class="m-0 form-group"
+      >
+        <input
+          class="is-loading form-control"
+          disabled=""
+          name="name"
+          value="Foo"
+        />
+        <div
+          class="invalid-feedback"
+        />
+        <div
+          class="d-flex justify-content-end mt-3"
+        >
+          <button
+            class="mr-2 btn btn-secondary"
+            disabled=""
+            type="button"
+          >
+            Close
+          </button>
+          <button
+            class="btn btn-primary"
+            disabled=""
+            type="submit"
+          >
+            <span
+              class="spinner-border spinner-border-sm ml-2"
+            />
+            Renaming...
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`rename and delete channel 5`] = `
+<div
+  class="modal-content"
+>
+  <div
+    class="modal-header"
+  >
+    <div
+      class="modal-title h4"
+    >
+      Rename channel
+    </div>
+    <button
+      class="close"
+      type="button"
+    >
+      <span
+        aria-hidden="true"
+      >
+        ×
+      </span>
+      <span
+        class="sr-only"
+      >
+        Close
+      </span>
+    </button>
+  </div>
+  <div
+    class="modal-body"
+  >
+    <form>
+      <div
+        class="m-0 form-group"
+      >
+        <input
+          class="is-invalid form-control"
+          name="name"
+          value="Foo"
+        />
+        <div
+          class="invalid-feedback"
+        >
+          The same name!
+        </div>
+        <div
+          class="d-flex justify-content-end mt-3"
+        >
+          <button
+            class="mr-2 btn btn-secondary"
+            type="button"
+          >
+            Close
+          </button>
+          <button
+            class="btn btn-primary"
+            type="submit"
+          >
+            Rename
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`rename and delete channel 6`] = `
+<ul
+  class="flex-column nav nav-pills nav-fill"
+>
+  <li
+    class="nav-item"
+  >
+    <button
+      class="btn-block text-left nav-link mb-2 btn btn-primary"
+      type="button"
+    >
+      general
+    </button>
+  </li>
+  <li
+    class="nav-item"
+  >
+    <button
+      class="btn-block text-left nav-link mb-2 btn btn-light"
+      type="button"
+    >
+      random
+    </button>
+  </li>
+  <li
+    class="nav-item"
+  >
+    <div
+      class="d-flex mb-2 dropdown btn-group"
+      role="group"
+    >
+      <button
+        class="btn-block text-left nav-link btn btn-light"
+        type="button"
+      >
+        Test
+      </button>
+      <button
+        aria-expanded="false"
+        aria-haspopup="true"
+        class="dropdown-toggle dropdown-toggle-split btn btn-light"
+        type="button"
+      />
+      <div
+        aria-labelledby=""
+        class="dropdown-menu"
+        style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; margin: 0px;"
+        x-placement="bottom-start"
+      >
+        <a
+          class="dropdown-item"
+          href="#"
+          role="button"
+        >
+          Rename
+        </a>
+        <a
+          class="dropdown-item"
+          href="#"
+          role="button"
+        >
+          Delete
+        </a>
+      </div>
+    </div>
+  </li>
+</ul>
+`;
+
+exports[`rename and delete channel 7`] = `
+<body
+  class=""
+  style="padding-right: 0px;"
+>
+  <div>
+    <div
+      class="h-100 pb-3 row"
+    >
+      <div
+        class="h-100 border-right overflow-auto col-3"
+      >
+        <div
+          class="d-flex mb-2"
+        >
+          <span
+            class="align-self-center"
+          >
+            Channels
+          </span>
+          <div
+            class="btn btn-link p-0 ml-auto"
+            role="button"
+            tabindex="-1"
+          >
+            <big>
+              +
+            </big>
+          </div>
+        </div>
+        <ul
+          class="flex-column nav nav-pills nav-fill"
+        >
+          <li
+            class="nav-item"
+          >
+            <button
+              class="btn-block text-left nav-link mb-2 btn btn-light"
+              type="button"
+            >
+              general
+            </button>
+          </li>
+          <li
+            class="nav-item"
+          >
+            <button
+              class="btn-block text-left nav-link mb-2 btn btn-light"
+              type="button"
+            >
+              random
+            </button>
+          </li>
+          <li
+            class="nav-item"
+          >
+            <div
+              class="d-flex mb-2 dropdown btn-group"
+              role="group"
+            >
+              <button
+                class="btn-block text-left nav-link btn btn-primary"
+                type="button"
+              >
+                Test
+              </button>
+              <button
+                aria-expanded="false"
+                aria-haspopup="true"
+                class="dropdown-toggle dropdown-toggle-split btn btn-primary"
+                type="button"
+              />
+              <div
+                aria-labelledby=""
+                class="dropdown-menu"
+                style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; margin: 0px;"
+                x-placement="bottom-start"
+              >
+                <a
+                  class="dropdown-item"
+                  href="#"
+                  role="button"
+                >
+                  Rename
+                </a>
+                <a
+                  class="dropdown-item"
+                  href="#"
+                  role="button"
+                >
+                  Delete
+                </a>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div
+        class="h-100 col"
+      >
+        <div
+          class="d-flex flex-column h-100"
+        >
+          <div
+            class="chat-messages overflow-auto mb-3"
+            id="messages-box"
+          >
+            <div>
+              <b>
+                user2 name
+              </b>
+              : 
+              some message to "test" channel
+            </div>
+          </div>
+          <div
+            class="mt-auto"
+          >
+            <form
+              data-testid="message-send-form"
+            >
+              <div
+                class="form-group"
+              >
+                <input
+                  class="form-control"
+                  data-testid="message-send-input"
+                  name="body"
+                  value=""
+                />
+                <div
+                  class="d-block invalid-feedback"
+                >
+                   
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`rename and delete channel 8`] = `
+<div
+  class="modal-content"
+>
+  <div
+    class="modal-header"
+  >
+    <div
+      class="modal-title h4"
+    >
+      Delete channel
+    </div>
+    <button
+      class="close"
+      type="button"
+    >
+      <span
+        aria-hidden="true"
+      >
+        ×
+      </span>
+      <span
+        class="sr-only"
+      >
+        Close
+      </span>
+    </button>
+  </div>
+  <div
+    class="modal-body"
+  >
+    <form>
+      <div
+        class="m-0 form-group"
+      >
+        <div
+          class="is-invalid"
+        >
+          <p
+            class="m-0"
+          >
+            Are you sure you want to delete Test?
+          </p>
+        </div>
+        <div
+          class="invalid-feedback"
+        />
+        <div
+          class="d-flex justify-content-end mt-3"
+        >
+          <button
+            class="mr-2 btn btn-secondary"
+            type="button"
+          >
+            Close
+          </button>
+          <button
+            class="btn btn-danger"
+            type="submit"
+          >
+            Delete
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`rename and delete channel 9`] = `
+<div
+  class="modal-content"
+>
+  <div
+    class="modal-header"
+  >
+    <div
+      class="modal-title h4"
+    >
+      Delete channel
+    </div>
+    <button
+      class="close"
+      type="button"
+    >
+      <span
+        aria-hidden="true"
+      >
+        ×
+      </span>
+      <span
+        class="sr-only"
+      >
+        Close
+      </span>
+    </button>
+  </div>
+  <div
+    class="modal-body"
+  >
+    <form>
+      <div
+        class="m-0 form-group"
+      >
+        <div
+          class="is-invalid"
+        >
+          <p
+            class="m-0"
+          >
+            Are you sure you want to delete Test?
+          </p>
+        </div>
+        <div
+          class="invalid-feedback"
+        >
+          Network Error
+        </div>
+        <div
+          class="d-flex justify-content-end mt-3"
+        >
+          <button
+            class="mr-2 btn btn-secondary"
+            type="button"
+          >
+            Close
+          </button>
+          <button
+            class="btn btn-danger"
+            type="submit"
+          >
+            Delete
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`rename and delete channel 10`] = `
+<body
+  class=""
+  style="padding-right: 0px;"
+>
+  <div>
+    <div
+      class="h-100 pb-3 row"
+    >
+      <div
+        class="h-100 border-right overflow-auto col-3"
+      >
+        <div
+          class="d-flex mb-2"
+        >
+          <span
+            class="align-self-center"
+          >
+            Channels
+          </span>
+          <div
+            class="btn btn-link p-0 ml-auto"
+            role="button"
+            tabindex="-1"
+          >
+            <big>
+              +
+            </big>
+          </div>
+        </div>
+        <ul
+          class="flex-column nav nav-pills nav-fill"
+        >
+          <li
+            class="nav-item"
+          >
+            <button
+              class="btn-block text-left nav-link mb-2 btn btn-primary"
+              type="button"
+            >
+              general
+            </button>
+          </li>
+          <li
+            class="nav-item"
+          >
+            <button
+              class="btn-block text-left nav-link mb-2 btn btn-light"
+              type="button"
+            >
+              random
+            </button>
+          </li>
+        </ul>
+      </div>
+      <div
+        class="h-100 col"
+      >
+        <div
+          class="d-flex flex-column h-100"
+        >
+          <div
+            class="chat-messages overflow-auto mb-3"
+            id="messages-box"
+          />
+          <div
+            class="mt-auto"
+          >
+            <form
+              data-testid="message-send-form"
+            >
+              <div
+                class="form-group"
+              >
+                <input
+                  class="form-control"
+                  data-testid="message-send-input"
+                  name="body"
+                  value=""
+                />
+                <div
+                  class="d-block invalid-feedback"
+                >
+                   
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`send messages, and cwitch channels 1`] = `
+<body>
+  <div>
+    <div
+      class="h-100 pb-3 row"
+    >
+      <div
+        class="h-100 border-right overflow-auto col-3"
+      >
+        <div
+          class="d-flex mb-2"
+        >
+          <span
+            class="align-self-center"
+          >
+            Channels
+          </span>
+          <div
+            class="btn btn-link p-0 ml-auto"
+            role="button"
+            tabindex="-1"
+          >
+            <big>
+              +
+            </big>
+          </div>
+        </div>
+        <ul
+          class="flex-column nav nav-pills nav-fill"
+        >
+          <li
+            class="nav-item"
+          >
+            <button
+              class="btn-block text-left nav-link mb-2 btn btn-primary"
+              type="button"
+            >
+              general
+            </button>
+          </li>
+          <li
+            class="nav-item"
+          >
+            <button
+              class="btn-block text-left nav-link mb-2 btn btn-light"
+              type="button"
+            >
+              random
+            </button>
+          </li>
+        </ul>
+      </div>
+      <div
+        class="h-100 col"
+      >
+        <div
+          class="d-flex flex-column h-100"
+        >
+          <div
+            class="chat-messages overflow-auto mb-3"
+            id="messages-box"
+          />
+          <div
+            class="mt-auto"
+          >
+            <form
+              data-testid="message-send-form"
+            >
+              <div
+                class="form-group"
+              >
+                <input
+                  class="form-control"
+                  data-testid="message-send-input"
+                  name="body"
+                  value=""
+                />
+                <div
+                  class="d-block invalid-feedback"
+                >
+                   
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`send messages, and cwitch channels 2`] = `
+<body>
+  <div>
+    <div
+      class="h-100 pb-3 row"
+    >
+      <div
+        class="h-100 border-right overflow-auto col-3"
+      >
+        <div
+          class="d-flex mb-2"
+        >
+          <span
+            class="align-self-center"
+          >
+            Channels
+          </span>
+          <div
+            class="btn btn-link p-0 ml-auto"
+            role="button"
+            tabindex="-1"
+          >
+            <big>
+              +
+            </big>
+          </div>
+        </div>
+        <ul
+          class="flex-column nav nav-pills nav-fill"
+        >
+          <li
+            class="nav-item"
+          >
+            <button
+              class="btn-block text-left nav-link mb-2 btn btn-primary"
+              type="button"
+            >
+              general
+            </button>
+          </li>
+          <li
+            class="nav-item"
+          >
+            <button
+              class="btn-block text-left nav-link mb-2 btn btn-light"
+              type="button"
+            >
+              random
+            </button>
+          </li>
+        </ul>
+      </div>
+      <div
+        class="h-100 col"
+      >
+        <div
+          class="d-flex flex-column h-100"
+        >
+          <div
+            class="chat-messages overflow-auto mb-3"
+            id="messages-box"
+          />
+          <div
+            class="mt-auto"
+          >
+            <form
+              data-testid="message-send-form"
+            >
+              <div
+                class="form-group"
+              >
+                <input
+                  class="form-control"
+                  data-testid="message-send-input"
+                  name="body"
+                  value=""
+                />
+                <div
+                  class="d-block invalid-feedback"
+                >
+                   
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`send messages, and cwitch channels 3`] = `
+<body>
+  <div>
+    <div
+      class="h-100 pb-3 row"
+    >
+      <div
+        class="h-100 border-right overflow-auto col-3"
+      >
+        <div
+          class="d-flex mb-2"
+        >
+          <span
+            class="align-self-center"
+          >
+            Channels
+          </span>
+          <div
+            class="btn btn-link p-0 ml-auto"
+            role="button"
+            tabindex="-1"
+          >
+            <big>
+              +
+            </big>
+          </div>
+        </div>
+        <ul
+          class="flex-column nav nav-pills nav-fill"
+        >
+          <li
+            class="nav-item"
+          >
+            <button
+              class="btn-block text-left nav-link mb-2 btn btn-primary"
+              type="button"
+            >
+              general
+            </button>
+          </li>
+          <li
+            class="nav-item"
+          >
+            <button
+              class="btn-block text-left nav-link mb-2 btn btn-light"
+              type="button"
+            >
+              random
+            </button>
+          </li>
+        </ul>
+      </div>
+      <div
+        class="h-100 col"
+      >
+        <div
+          class="d-flex flex-column h-100"
+        >
+          <div
+            class="chat-messages overflow-auto mb-3"
+            id="messages-box"
+          />
+          <div
+            class="mt-auto"
+          >
+            <form
+              data-testid="message-send-form"
+            >
+              <div
+                class="form-group"
+              >
+                <input
+                  class="is-loading form-control"
+                  data-testid="message-send-input"
+                  disabled=""
+                  name="body"
+                  value="test message on \\"general\\" channel"
+                />
+                <span
+                  class="spinner-border spinner-border-sm [readonly]"
+                />
+                <div
+                  class="d-block invalid-feedback"
+                >
+                   
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`send messages, and cwitch channels 4`] = `
+<body>
+  <div>
+    <div
+      class="h-100 pb-3 row"
+    >
+      <div
+        class="h-100 border-right overflow-auto col-3"
+      >
+        <div
+          class="d-flex mb-2"
+        >
+          <span
+            class="align-self-center"
+          >
+            Channels
+          </span>
+          <div
+            class="btn btn-link p-0 ml-auto"
+            role="button"
+            tabindex="-1"
+          >
+            <big>
+              +
+            </big>
+          </div>
+        </div>
+        <ul
+          class="flex-column nav nav-pills nav-fill"
+        >
+          <li
+            class="nav-item"
+          >
+            <button
+              class="btn-block text-left nav-link mb-2 btn btn-primary"
+              type="button"
+            >
+              general
+            </button>
+          </li>
+          <li
+            class="nav-item"
+          >
+            <button
+              class="btn-block text-left nav-link mb-2 btn btn-light"
+              type="button"
+            >
+              random
+            </button>
+          </li>
+        </ul>
+      </div>
+      <div
+        class="h-100 col"
+      >
+        <div
+          class="d-flex flex-column h-100"
+        >
+          <div
+            class="chat-messages overflow-auto mb-3"
+            id="messages-box"
+          />
+          <div
+            class="mt-auto"
+          >
+            <form
+              data-testid="message-send-form"
+            >
+              <div
+                class="form-group"
+              >
+                <input
+                  class="is-invalid form-control"
+                  data-testid="message-send-input"
+                  name="body"
+                  value="test message on \\"general\\" channel"
+                />
+                <div
+                  class="d-block invalid-feedback"
+                >
+                  Network Error
+                   
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`send messages, and cwitch channels 5`] = `
+<body>
+  <div>
+    <div
+      class="h-100 pb-3 row"
+    >
+      <div
+        class="h-100 border-right overflow-auto col-3"
+      >
+        <div
+          class="d-flex mb-2"
+        >
+          <span
+            class="align-self-center"
+          >
+            Channels
+          </span>
+          <div
+            class="btn btn-link p-0 ml-auto"
+            role="button"
+            tabindex="-1"
+          >
+            <big>
+              +
+            </big>
+          </div>
+        </div>
+        <ul
+          class="flex-column nav nav-pills nav-fill"
+        >
+          <li
+            class="nav-item"
+          >
+            <button
+              class="btn-block text-left nav-link mb-2 btn btn-primary"
+              type="button"
+            >
+              general
+            </button>
+          </li>
+          <li
+            class="nav-item"
+          >
+            <button
+              class="btn-block text-left nav-link mb-2 btn btn-light"
+              type="button"
+            >
+              random
+            </button>
+          </li>
+        </ul>
+      </div>
+      <div
+        class="h-100 col"
+      >
+        <div
+          class="d-flex flex-column h-100"
+        >
+          <div
+            class="chat-messages overflow-auto mb-3"
+            id="messages-box"
+          >
+            <div>
+              <b>
+                user1 name
+              </b>
+              : 
+              test message on "general" channel
+            </div>
+          </div>
+          <div
+            class="mt-auto"
+          >
+            <form
+              data-testid="message-send-form"
+            >
+              <div
+                class="form-group"
+              >
+                <input
+                  class="form-control"
+                  data-testid="message-send-input"
+                  name="body"
+                  value=""
+                />
+                <div
+                  class="d-block invalid-feedback"
+                >
+                   
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`send messages, and cwitch channels 6`] = `
+<body>
+  <div>
+    <div
+      class="h-100 pb-3 row"
+    >
+      <div
+        class="h-100 border-right overflow-auto col-3"
+      >
+        <div
+          class="d-flex mb-2"
+        >
+          <span
+            class="align-self-center"
+          >
+            Channels
+          </span>
+          <div
+            class="btn btn-link p-0 ml-auto"
+            role="button"
+            tabindex="-1"
+          >
+            <big>
+              +
+            </big>
+          </div>
+        </div>
+        <ul
+          class="flex-column nav nav-pills nav-fill"
+        >
+          <li
+            class="nav-item"
+          >
+            <button
+              class="btn-block text-left nav-link mb-2 btn btn-light"
+              type="button"
+            >
+              general
+            </button>
+          </li>
+          <li
+            class="nav-item"
+          >
+            <button
+              class="btn-block text-left nav-link mb-2 btn btn-primary"
+              type="button"
+            >
+              random
+            </button>
+          </li>
+        </ul>
+      </div>
+      <div
+        class="h-100 col"
+      >
+        <div
+          class="d-flex flex-column h-100"
+        >
+          <div
+            class="chat-messages overflow-auto mb-3"
+            id="messages-box"
+          >
+            <div>
+              <b>
+                user2 name
+              </b>
+              : 
+              message to "random" channel
+            </div>
+          </div>
+          <div
+            class="mt-auto"
+          >
+            <form
+              data-testid="message-send-form"
+            >
+              <div
+                class="form-group"
+              >
+                <input
+                  class="form-control"
+                  data-testid="message-send-input"
+                  name="body"
+                  value=""
+                />
+                <div
+                  class="d-block invalid-feedback"
+                >
+                   
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
