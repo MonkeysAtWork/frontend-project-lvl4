@@ -292,7 +292,7 @@ exports[`add channel 4`] = `
             type="submit"
           >
             <span
-              class="spinner-border spinner-border-sm ml-2"
+              class="spinner-border spinner-border-sm mr-1"
             />
             Add
           </button>
@@ -729,7 +729,7 @@ exports[`rename and delete channel 4`] = `
             type="submit"
           >
             <span
-              class="spinner-border spinner-border-sm ml-2"
+              class="spinner-border spinner-border-sm mr-1"
             />
             Rename
           </button>

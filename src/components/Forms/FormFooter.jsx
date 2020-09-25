@@ -32,7 +32,7 @@ const Footer = (props) => {
         type="submit"
         disabled={isDisabled}
       >
-        {isDisabled && <span className="spinner-border spinner-border-sm ml-2" />}
+        {isDisabled && <span className="spinner-border spinner-border-sm mr-1" />}
         {submitName}
       </Button>
     </div>
