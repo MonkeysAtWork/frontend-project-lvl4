@@ -5,13 +5,13 @@ import { connect } from 'react-redux';
 import cn from 'classnames';
 
 import { Form, FormGroup, FormControl } from 'react-bootstrap';
-import Button from 'react-bootstrap/Button';
 
 import { useFormik } from 'formik';
 import axios from 'axios';
 
 import { actions } from '../../slices';
 import routes from '../../routes.js';
+import Footer from './FormFooter';
 
 const mapStateToProps = ({ modalInfo: { item } }) => (
   { currentChannel: item });
@@ -66,7 +66,7 @@ const ChannelRenameForm = (props) => {
       <FormGroup className="m-0">
         <FormControl
           name="name"
-          className={cn({ 'is-invalid': formik.errors.name, 'is-loading': formik.isSubmitting })}
+          className={cn({ 'is-invalid': formik.errors.name })}
           disabled={formik.isSubmitting}
           onChange={formik.handleChange}
           value={formik.values.name}
@@ -75,24 +75,10 @@ const ChannelRenameForm = (props) => {
         <Form.Control.Feedback type="invalid">
           {formik.errors.name}
         </Form.Control.Feedback>
-        <div className="d-flex justify-content-end mt-3">
-          <Button
-            className="mr-2"
-            variant="secondary"
-            onClick={() => closeModal()}
-            disabled={formik.isSubmitting}
-          >
-            Close
-          </Button>
-          <Button
-            variant="primary"
-            type="submit"
-            disabled={formik.isSubmitting}
-          >
-            {formik.isSubmitting && <span className="spinner-border spinner-border-sm ml-2" />}
-            {formik.isSubmitting ? 'Renaming...' : 'Rename'}
-          </Button>
-        </div>
+        <Footer
+          isDisabled={formik.isSubmitting}
+          submitName="Rename"
+        />
       </FormGroup>
     </form>
   );

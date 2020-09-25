@@ -34,11 +34,11 @@ const MessageSendForm = (props) => {
 
   const messageInput = useRef();
   useEffect(() => {
-    if (modalInfo.type === 'none') {
+    if (!modalInfo.type) {
       // @ts-ignore
       messageInput.current.focus();
     }
-  }, [modalInfo, currentChannelId, formik.isSubmitting]);
+  }, [modalInfo.type, currentChannelId, formik.isSubmitting]);
 
   return (
     <form onSubmit={formik.handleSubmit} data-testid="message-send-form">

@@ -265,7 +265,7 @@ exports[`add channel 4`] = `
         class="m-0 form-group"
       >
         <input
-          class="is-invalid is-loading form-control"
+          class="is-invalid form-control"
           data-testid="channel-add-input"
           disabled=""
           name="name"
@@ -294,7 +294,7 @@ exports[`add channel 4`] = `
             <span
               class="spinner-border spinner-border-sm ml-2"
             />
-            Adding...
+            Add
           </button>
         </div>
       </div>
@@ -705,7 +705,7 @@ exports[`rename and delete channel 4`] = `
         class="m-0 form-group"
       >
         <input
-          class="is-loading form-control"
+          class="form-control"
           disabled=""
           name="name"
           value="Foo"
@@ -731,7 +731,7 @@ exports[`rename and delete channel 4`] = `
             <span
               class="spinner-border spinner-border-sm ml-2"
             />
-            Renaming...
+            Rename
           </button>
         </div>
       </div>

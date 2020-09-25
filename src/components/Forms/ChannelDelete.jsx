@@ -4,13 +4,13 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { Form, FormGroup } from 'react-bootstrap';
-import Button from 'react-bootstrap/Button';
 
 import { useFormik } from 'formik';
 import axios from 'axios';
 
 import { actions } from '../../slices';
 import routes from '../../routes.js';
+import Footer from './FormFooter';
 
 const mapStateToProps = ({ modalInfo: { item }, currentChannelId }) => ({
   activeChannelId: currentChannelId,
@@ -38,7 +38,8 @@ const ChannelDeleteForm = (props) => {
 
         await axios.delete(url);
         if (currentChannel.id === activeChannelId) {
-          switchChannel(1);
+          const defaultChannelId = 1;
+          switchChannel(defaultChannelId);
         }
         closeModal();
       } catch (err) {
@@ -58,24 +59,11 @@ const ChannelDeleteForm = (props) => {
         <Form.Control.Feedback type="invalid">
           {formik.errors.name}
         </Form.Control.Feedback>
-        <div className="d-flex justify-content-end mt-3">
-          <Button
-            className="mr-2"
-            variant="secondary"
-            onClick={() => closeModal()}
-            disabled={formik.isSubmitting}
-          >
-            Close
-          </Button>
-          <Button
-            variant="danger"
-            type="submit"
-            disabled={formik.isSubmitting}
-          >
-            {formik.isSubmitting && <span className="spinner-border spinner-border-sm ml-2" />}
-            {formik.isSubmitting ? 'Deleting...' : 'Delete'}
-          </Button>
-        </div>
+        <Footer
+          isDisabled={formik.isSubmitting}
+          submitName="Delete"
+          submitVariant="danger"
+        />
       </FormGroup>
     </form>
   );

@@ -172,8 +172,8 @@ it('rename and delete channel', async () => {
   expect(document.querySelector('.modal-content')).toMatchSnapshot();
 
   // submit the same name snapshot 4
-  const submitButton = screen.getAllByText('Rename')[1];
-  userEvent.click(submitButton);
+  const renameSubmitButton = screen.getAllByText('Rename')[1];
+  userEvent.click(renameSubmitButton);
   expect(document.querySelector('.modal-content')).toMatchSnapshot();
 
   // same name error snapshot 5
@@ -189,8 +189,8 @@ it('rename and delete channel', async () => {
     });
   const channelNameInput = screen.getByDisplayValue('Foo');
   userEvent.type(channelNameInput, 'Test');
-  userEvent.click(submitButton);
-  await waitForElementToBeRemoved(screen.getByText('Renaming...'));
+  userEvent.click(renameSubmitButton);
+  await waitForElementToBeRemoved(channelNameInput);
   expect(document.querySelector('.flex-column')).toMatchSnapshot();
 
   // switch channel to Test snapshot 7
@@ -205,7 +205,9 @@ it('rename and delete channel', async () => {
   nock(host)
     .delete('/api/v1/channels/3')
     .replyWithError('some error');
-  userEvent.click(screen.getAllByText('Delete')[1]);
+  const deleteSubmitButton = screen.getAllByText('Delete')[1];
+
+  userEvent.click(deleteSubmitButton);
   await waitFor(() => screen.getByText('Network Error'));
   expect(document.querySelector('.modal-content')).toMatchSnapshot();
 
@@ -216,6 +218,6 @@ it('rename and delete channel', async () => {
       setTimeout(() => sendWsMessage('removeChannel', { id: 3 }));
     });
   userEvent.click(screen.getAllByText('Delete')[1]);
-  await waitForElementToBeRemoved(screen.getByText('Deleting...'));
+  await waitForElementToBeRemoved(deleteSubmitButton);
   expect(document.body).toMatchSnapshot();
 });
