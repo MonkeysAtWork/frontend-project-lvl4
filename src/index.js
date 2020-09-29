@@ -31,8 +31,8 @@ const getUserName = () => {
 if (process.env.NODE_ENV !== 'production') {
   localStorage.debug = 'chat:*';
 } else {
-  // eslint-disable-next-line no-unused-vars
-  const rollbar = new Rollbar({
+  // eslint-disable-next-line no-new
+  new Rollbar({
     accessToken: 'a98438cbf89d49a983da1f78ad848402',
     captureUncaught: true,
     captureUnhandledRejections: true,

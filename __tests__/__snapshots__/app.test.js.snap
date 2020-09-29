@@ -100,20 +100,20 @@ exports[`add channel 2`] = `
           class="flex-column nav nav-pills nav-fill"
         >
           <li
-            class="nav-item"
+            class="mb-2 nav-item"
           >
             <button
-              class="btn-block text-left nav-link mb-2 btn btn-primary"
+              class="btn-block text-left nav-link btn btn-primary"
               type="button"
             >
               general
             </button>
           </li>
           <li
-            class="nav-item"
+            class="mb-2 nav-item"
           >
             <button
-              class="btn-block text-left nav-link mb-2 btn btn-light"
+              class="btn-block text-left nav-link btn btn-light"
               type="button"
             >
               random
@@ -376,30 +376,30 @@ exports[`add channel 6`] = `
   class="flex-column nav nav-pills nav-fill"
 >
   <li
-    class="nav-item"
+    class="mb-2 nav-item"
   >
     <button
-      class="btn-block text-left nav-link mb-2 btn btn-primary"
+      class="btn-block text-left nav-link btn btn-primary"
       type="button"
     >
       general
     </button>
   </li>
   <li
-    class="nav-item"
+    class="mb-2 nav-item"
   >
     <button
-      class="btn-block text-left nav-link mb-2 btn btn-light"
+      class="btn-block text-left nav-link btn btn-light"
       type="button"
     >
       random
     </button>
   </li>
   <li
-    class="nav-item"
+    class="mb-2 nav-item"
   >
     <div
-      class="d-flex mb-2 dropdown btn-group"
+      class="d-flex dropdown btn-group"
       role="group"
     >
       <button
@@ -453,30 +453,30 @@ exports[`rename and delete channel 1`] = `
           class="flex-column nav nav-pills nav-fill"
         >
           <li
-            class="nav-item"
+            class="mb-2 nav-item"
           >
             <button
-              class="btn-block text-left nav-link mb-2 btn btn-primary"
+              class="btn-block text-left nav-link btn btn-primary"
               type="button"
             >
               general
             </button>
           </li>
           <li
-            class="nav-item"
+            class="mb-2 nav-item"
           >
             <button
-              class="btn-block text-left nav-link mb-2 btn btn-light"
+              class="btn-block text-left nav-link btn btn-light"
               type="button"
             >
               random
             </button>
           </li>
           <li
-            class="nav-item"
+            class="mb-2 nav-item"
           >
             <div
-              class="d-flex mb-2 dropdown btn-group"
+              class="d-flex dropdown btn-group"
               role="group"
             >
               <button
@@ -540,30 +540,30 @@ exports[`rename and delete channel 2`] = `
   class="flex-column nav nav-pills nav-fill"
 >
   <li
-    class="nav-item"
+    class="mb-2 nav-item"
   >
     <button
-      class="btn-block text-left nav-link mb-2 btn btn-primary"
+      class="btn-block text-left nav-link btn btn-primary"
       type="button"
     >
       general
     </button>
   </li>
   <li
-    class="nav-item"
+    class="mb-2 nav-item"
   >
     <button
-      class="btn-block text-left nav-link mb-2 btn btn-light"
+      class="btn-block text-left nav-link btn btn-light"
       type="button"
     >
       random
     </button>
   </li>
   <li
-    class="nav-item"
+    class="mb-2 nav-item"
   >
     <div
-      class="d-flex mb-2 show dropdown btn-group"
+      class="d-flex show dropdown btn-group"
       role="group"
     >
       <button
@@ -812,30 +812,30 @@ exports[`rename and delete channel 6`] = `
   class="flex-column nav nav-pills nav-fill"
 >
   <li
-    class="nav-item"
+    class="mb-2 nav-item"
   >
     <button
-      class="btn-block text-left nav-link mb-2 btn btn-primary"
+      class="btn-block text-left nav-link btn btn-primary"
       type="button"
     >
       general
     </button>
   </li>
   <li
-    class="nav-item"
+    class="mb-2 nav-item"
   >
     <button
-      class="btn-block text-left nav-link mb-2 btn btn-light"
+      class="btn-block text-left nav-link btn btn-light"
       type="button"
     >
       random
     </button>
   </li>
   <li
-    class="nav-item"
+    class="mb-2 nav-item"
   >
     <div
-      class="d-flex mb-2 dropdown btn-group"
+      class="d-flex dropdown btn-group"
       role="group"
     >
       <button
@@ -910,30 +910,30 @@ exports[`rename and delete channel 7`] = `
           class="flex-column nav nav-pills nav-fill"
         >
           <li
-            class="nav-item"
+            class="mb-2 nav-item"
           >
             <button
-              class="btn-block text-left nav-link mb-2 btn btn-light"
+              class="btn-block text-left nav-link btn btn-light"
               type="button"
             >
               general
             </button>
           </li>
           <li
-            class="nav-item"
+            class="mb-2 nav-item"
           >
             <button
-              class="btn-block text-left nav-link mb-2 btn btn-light"
+              class="btn-block text-left nav-link btn btn-light"
               type="button"
             >
               random
             </button>
           </li>
           <li
-            class="nav-item"
+            class="mb-2 nav-item"
           >
             <div
-              class="d-flex mb-2 dropdown btn-group"
+              class="d-flex dropdown btn-group"
               role="group"
             >
               <button
@@ -1195,20 +1195,20 @@ exports[`rename and delete channel 10`] = `
           class="flex-column nav nav-pills nav-fill"
         >
           <li
-            class="nav-item"
+            class="mb-2 nav-item"
           >
             <button
-              class="btn-block text-left nav-link mb-2 btn btn-primary"
+              class="btn-block text-left nav-link btn btn-primary"
               type="button"
             >
               general
             </button>
           </li>
           <li
-            class="nav-item"
+            class="mb-2 nav-item"
           >
             <button
-              class="btn-block text-left nav-link mb-2 btn btn-light"
+              class="btn-block text-left nav-link btn btn-light"
               type="button"
             >
               random
@@ -1287,20 +1287,20 @@ exports[`send messages, and cwitch channels 1`] = `
           class="flex-column nav nav-pills nav-fill"
         >
           <li
-            class="nav-item"
+            class="mb-2 nav-item"
           >
             <button
-              class="btn-block text-left nav-link mb-2 btn btn-primary"
+              class="btn-block text-left nav-link btn btn-primary"
               type="button"
             >
               general
             </button>
           </li>
           <li
-            class="nav-item"
+            class="mb-2 nav-item"
           >
             <button
-              class="btn-block text-left nav-link mb-2 btn btn-light"
+              class="btn-block text-left nav-link btn btn-light"
               type="button"
             >
               random
@@ -1379,20 +1379,20 @@ exports[`send messages, and cwitch channels 2`] = `
           class="flex-column nav nav-pills nav-fill"
         >
           <li
-            class="nav-item"
+            class="mb-2 nav-item"
           >
             <button
-              class="btn-block text-left nav-link mb-2 btn btn-primary"
+              class="btn-block text-left nav-link btn btn-primary"
               type="button"
             >
               general
             </button>
           </li>
           <li
-            class="nav-item"
+            class="mb-2 nav-item"
           >
             <button
-              class="btn-block text-left nav-link mb-2 btn btn-light"
+              class="btn-block text-left nav-link btn btn-light"
               type="button"
             >
               random
@@ -1471,20 +1471,20 @@ exports[`send messages, and cwitch channels 3`] = `
           class="flex-column nav nav-pills nav-fill"
         >
           <li
-            class="nav-item"
+            class="mb-2 nav-item"
           >
             <button
-              class="btn-block text-left nav-link mb-2 btn btn-primary"
+              class="btn-block text-left nav-link btn btn-primary"
               type="button"
             >
               general
             </button>
           </li>
           <li
-            class="nav-item"
+            class="mb-2 nav-item"
           >
             <button
-              class="btn-block text-left nav-link mb-2 btn btn-light"
+              class="btn-block text-left nav-link btn btn-light"
               type="button"
             >
               random
@@ -1567,20 +1567,20 @@ exports[`send messages, and cwitch channels 4`] = `
           class="flex-column nav nav-pills nav-fill"
         >
           <li
-            class="nav-item"
+            class="mb-2 nav-item"
           >
             <button
-              class="btn-block text-left nav-link mb-2 btn btn-primary"
+              class="btn-block text-left nav-link btn btn-primary"
               type="button"
             >
               general
             </button>
           </li>
           <li
-            class="nav-item"
+            class="mb-2 nav-item"
           >
             <button
-              class="btn-block text-left nav-link mb-2 btn btn-light"
+              class="btn-block text-left nav-link btn btn-light"
               type="button"
             >
               random
@@ -1660,20 +1660,20 @@ exports[`send messages, and cwitch channels 5`] = `
           class="flex-column nav nav-pills nav-fill"
         >
           <li
-            class="nav-item"
+            class="mb-2 nav-item"
           >
             <button
-              class="btn-block text-left nav-link mb-2 btn btn-primary"
+              class="btn-block text-left nav-link btn btn-primary"
               type="button"
             >
               general
             </button>
           </li>
           <li
-            class="nav-item"
+            class="mb-2 nav-item"
           >
             <button
-              class="btn-block text-left nav-link mb-2 btn btn-light"
+              class="btn-block text-left nav-link btn btn-light"
               type="button"
             >
               random
@@ -1760,20 +1760,20 @@ exports[`send messages, and cwitch channels 6`] = `
           class="flex-column nav nav-pills nav-fill"
         >
           <li
-            class="nav-item"
+            class="mb-2 nav-item"
           >
             <button
-              class="btn-block text-left nav-link mb-2 btn btn-light"
+              class="btn-block text-left nav-link btn btn-light"
               type="button"
             >
               general
             </button>
           </li>
           <li
-            class="nav-item"
+            class="mb-2 nav-item"
           >
             <button
-              class="btn-block text-left nav-link mb-2 btn btn-primary"
+              class="btn-block text-left nav-link btn btn-primary"
               type="button"
             >
               random
