@@ -2,16 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Modal from 'react-bootstrap/Modal';
 
-import ChannelAdd from './Forms/ChannelAdd';
-import ChannelDelete from './Forms/ChannelDelete';
-import ChannelRename from './Forms/ChannelRename';
+import ChannelForm from './ChannelForm';
 import { actions } from '../slices';
-
-const forms = {
-  add: ChannelAdd,
-  delete: ChannelDelete,
-  rename: ChannelRename,
-};
 
 const mapStateToProps = ({ modalInfo: { type, open } }) => ({ modalType: type, isOpen: open });
 
@@ -26,7 +18,6 @@ const OpenModal = (props) => {
     return null;
   }
 
-  const Form = forms[modalType];
   const modalName = modalType[0].toUpperCase() + modalType.substring(1);
 
   return (
@@ -38,7 +29,7 @@ const OpenModal = (props) => {
         <Modal.Title>{`${modalName} channel`}</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <Form />
+        <ChannelForm />
       </Modal.Body>
     </Modal>
   );

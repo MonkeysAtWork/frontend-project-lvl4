@@ -9,8 +9,8 @@ import { Form, FormGroup, FormControl } from 'react-bootstrap';
 import axios from 'axios';
 import { useFormik } from 'formik';
 
-import routes from '../../routes.js';
-import UserContext from '../../UserContext';
+import routes from '../routes.js';
+import UserContext from '../UserContext';
 
 const mapStateToProps = ({ currentChannelId, modalInfo }) => ({ currentChannelId, modalInfo });
 

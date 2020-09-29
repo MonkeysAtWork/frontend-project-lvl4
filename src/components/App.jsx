@@ -7,7 +7,7 @@ import Col from 'react-bootstrap/Col';
 
 import MessagesBox from './MessagesBox';
 import ChannelsNav from './ChannelsNav';
-import MessageSendForm from './Forms/MessageSend';
+import MessageSendForm from './MessageSendForm';
 import Modal from './Modal';
 
 const App = () => (

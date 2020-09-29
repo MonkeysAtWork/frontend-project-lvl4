@@ -24,7 +24,7 @@ jobs:
       - name: Run linter
         run: make lint
       - name: Run test
-        run: make test-coverage
+        run: send test-coverage
       - name: Report
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
