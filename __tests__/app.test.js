@@ -3,7 +3,7 @@ import 'regenerator-runtime/runtime';
 import '@testing-library/dom';
 
 import nock from 'nock';
-// import React from 'react';
+
 import {
   render,
   screen,
@@ -13,7 +13,6 @@ import {
 } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import EventEmitter from 'events';
-import { delay } from 'nanodelay';
 import _ from 'lodash';
 
 import run from '../src/init';
@@ -83,7 +82,7 @@ it('send messages, and cwitch channels', async () => {
     });
   messageSendForm.dispatchEvent(new Event('submit'));
 
-  await delay(200);
+  await waitForElementToBeRemoved(document.querySelector('.spinner-border'));
   expect(document.body).toMatchSnapshot();
 
   // change channel to random snapshot 6
