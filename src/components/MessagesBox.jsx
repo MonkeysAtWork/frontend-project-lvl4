@@ -1,34 +1,31 @@
 // @ts-check
 
-import React, { useEffect } from 'react';
-import { connect } from 'react-redux';
+import React, { useEffect, useRef } from 'react';
+import { useSelector } from 'react-redux';
 
-const mapStateToProps = (state) => {
-  const messages = state.messages.filter((m) => m.channelId === state.currentChannelId);
-  return { messages };
-};
+const MessagesBox = () => {
+  const messages = useSelector((state) => (
+    // @ts-ignore
+    state.messagesInfo.messages.filter((m) => m.channelId === state.channelsInfo.currentChannelId)
+  ));
 
-const MessagesBox = (props) => {
-  const { messages } = props;
-
+  const messageBox = useRef();
   useEffect(() => {
-    const messageBox = document.getElementById('messages-box');
-    messageBox.scrollTop = messageBox.scrollHeight;
+    // @ts-ignore
+    messageBox.current.scrollTop = messageBox.current.scrollHeight;
   });
 
   return (
-    <div id="messages-box" className="chat-messages overflow-auto mb-3">
-      {messages.length > 0 && messages.map(
-        ({ id, nickname, body }) => (
-          <div key={id}>
-            <b>{nickname}</b>
-            :&nbsp;
-            {body}
-          </div>
-        ),
-      )}
+    <div className="chat-messages overflow-auto mb-3" ref={messageBox}>
+      {messages.map(({ id, nickname, body }) => (
+        <div key={id}>
+          <b>{nickname}</b>
+          :&nbsp;
+          {body}
+        </div>
+      ))}
     </div>
   );
 };
 
-export default connect(mapStateToProps)(MessagesBox);
+export default MessagesBox;

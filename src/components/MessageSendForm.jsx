@@ -1,7 +1,7 @@
 // @ts-check
 
 import React, { useEffect, useRef, useContext } from 'react';
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 import cn from 'classnames';
 
 import { Form, FormGroup, FormControl } from 'react-bootstrap';
@@ -12,11 +12,10 @@ import { useFormik } from 'formik';
 import routes from '../routes.js';
 import UserContext from '../UserContext';
 
-const mapStateToProps = ({ currentChannelId, modalInfo }) => ({ currentChannelId, modalInfo });
-
-const MessageSendForm = (props) => {
-  const { currentChannelId, modalInfo } = props;
+const MessageSendForm = () => {
   const nickname = useContext(UserContext);
+  // @ts-ignore
+  const { modalInfo, channelsInfo: { currentChannelId } } = useSelector((state) => state);
 
   const formik = useFormik({
     initialValues: { body: '' },
@@ -65,4 +64,4 @@ const MessageSendForm = (props) => {
   );
 };
 
-export default connect(mapStateToProps)(MessageSendForm);
+export default MessageSendForm;

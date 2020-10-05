@@ -1,7 +1,7 @@
 // @ts-check
 
 import React, { useEffect, useRef } from 'react';
-import { connect } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import cn from 'classnames';
 
 import { Form, FormGroup, FormControl } from 'react-bootstrap';
@@ -13,13 +13,6 @@ import { actions } from '../../slices';
 import routes from '../../routes.js';
 import Footer from './FormFooter';
 
-const mapStateToProps = ({ modalInfo: { item } }) => (
-  { currentChannel: item });
-
-const actionCreators = {
-  closeModal: actions.closeModal,
-};
-
 const validate = (value, oldValue) => {
   if (value === oldValue) {
     return 'The same name!';
@@ -30,8 +23,11 @@ const validate = (value, oldValue) => {
   return '';
 };
 
-const ChannelRenameForm = (props) => {
-  const { closeModal, currentChannel } = props;
+const ChannelRenameForm = () => {
+  // @ts-ignore
+  const currentChannel = useSelector((state) => state.modalInfo.item);
+
+  const dispatch = useDispatch();
 
   const formik = useFormik({
     initialValues: { name: currentChannel.name },
@@ -48,7 +44,7 @@ const ChannelRenameForm = (props) => {
         const attributes = { ...currentChannel, name };
 
         await axios.patch(url, { data: { attributes } });
-        closeModal();
+        dispatch(actions.closeModal());
       } catch (err) {
         setErrors({ name: err.message });
       }
@@ -84,4 +80,4 @@ const ChannelRenameForm = (props) => {
   );
 };
 
-export default connect(mapStateToProps, actionCreators)(ChannelRenameForm);
+export default ChannelRenameForm;

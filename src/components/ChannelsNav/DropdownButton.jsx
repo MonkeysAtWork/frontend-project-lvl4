@@ -1,7 +1,7 @@
 // @ts-check
 
 import React from 'react';
-import { connect } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import Dropdown from 'react-bootstrap/Dropdown';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
@@ -10,17 +10,14 @@ import SimpleButton from './SimpleButton';
 
 import { actions } from '../../slices';
 
-const mapStateToProps = ({ currentChannelId }) => (
-  { currentChannelId }
-);
-
-const actionCreators = {
-  openModal: actions.openModal,
-};
-
 const DropdownButton = (props) => {
-  const { openModal, currentChannelId, item } = props;
+  const { item } = props;
+  // @ts-ignore
+  const { currentChannelId } = useSelector((state) => state.channelsInfo);
   const isActive = item.id === currentChannelId;
+
+  const dispatch = useDispatch();
+  const openModal = (payload) => () => dispatch(actions.openModal(payload));
 
   return (
     <Dropdown as={ButtonGroup} className="d-flex">
@@ -32,13 +29,13 @@ const DropdownButton = (props) => {
 
       <Dropdown.Menu>
         <Dropdown.Item
-          onClick={() => openModal({ type: 'rename', item })}
+          onClick={openModal({ type: 'rename', item })}
         >
           Rename
         </Dropdown.Item>
 
         <Dropdown.Item
-          onClick={() => openModal({ type: 'delete', item })}
+          onClick={openModal({ type: 'delete', item })}
         >
           Delete
         </Dropdown.Item>
@@ -47,4 +44,4 @@ const DropdownButton = (props) => {
   );
 };
 
-export default connect(mapStateToProps, actionCreators)(DropdownButton);
+export default DropdownButton;

@@ -2,23 +2,20 @@
 
 import { combineReducers } from 'redux';
 
-import channels, { actions as channelsActions } from './channels';
-import messages, { actions as messagesActions } from './messages';
-import currentChannelId, { actions as currentChannelIdActions } from './currentChannelId';
-import modalInfo, { actions as modalInfoActions } from './modalInfo';
+import channelsInfo, { actions as channelsActions } from './channelsInfo';
+import messagesInfo, { actions as messagesActions } from './messagesInfo';
+import modalInfo, { actions as modalActions } from './modalInfo';
 
 export default combineReducers({
-  messages,
-  channels,
-  currentChannelId,
+  messagesInfo,
+  channelsInfo,
   modalInfo,
 });
 
 const actions = {
   ...channelsActions,
   ...messagesActions,
-  ...currentChannelIdActions,
-  ...modalInfoActions,
+  ...modalActions,
 };
 
 export { actions };

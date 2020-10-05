@@ -1,7 +1,7 @@
 // @ts-check
 
 import React, { useEffect, useRef } from 'react';
-import { connect } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import cn from 'classnames';
 
 import { Form, FormGroup, FormControl } from 'react-bootstrap';
@@ -13,10 +13,6 @@ import { actions } from '../../slices';
 import routes from '../../routes.js';
 import Footer from './FormFooter';
 
-const actionCreators = {
-  closeModal: actions.closeModal,
-};
-
 const validate = (value) => {
   if (!value) {
     return 'Channel name don\'t must be empty or consist of spaces only';
@@ -24,8 +20,8 @@ const validate = (value) => {
   return '';
 };
 
-const ChannelAddForm = (props) => {
-  const { closeModal } = props;
+const ChannelAddForm = () => {
+  const dispatch = useDispatch();
 
   const formik = useFormik({
     initialValues: { name: '' },
@@ -42,7 +38,7 @@ const ChannelAddForm = (props) => {
         const data = { attributes: { name } };
 
         await axios.post(url, { data });
-        closeModal();
+        dispatch(actions.closeModal());
       } catch (err) {
         setErrors({ name: err.message });
       }
@@ -79,4 +75,4 @@ const ChannelAddForm = (props) => {
   );
 };
 
-export default connect(null, actionCreators)(ChannelAddForm);
+export default ChannelAddForm;

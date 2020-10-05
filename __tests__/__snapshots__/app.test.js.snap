@@ -129,7 +129,6 @@ exports[`add channel 2`] = `
         >
           <div
             class="chat-messages overflow-auto mb-3"
-            id="messages-box"
           />
           <div
             class="mt-auto"
@@ -503,7 +502,6 @@ exports[`rename and delete channel 1`] = `
         >
           <div
             class="chat-messages overflow-auto mb-3"
-            id="messages-box"
           />
           <div
             class="mt-auto"
@@ -981,7 +979,6 @@ exports[`rename and delete channel 7`] = `
         >
           <div
             class="chat-messages overflow-auto mb-3"
-            id="messages-box"
           >
             <div>
               <b>
@@ -1224,7 +1221,6 @@ exports[`rename and delete channel 10`] = `
         >
           <div
             class="chat-messages overflow-auto mb-3"
-            id="messages-box"
           />
           <div
             class="mt-auto"
@@ -1316,7 +1312,6 @@ exports[`send messages, and cwitch channels 1`] = `
         >
           <div
             class="chat-messages overflow-auto mb-3"
-            id="messages-box"
           />
           <div
             class="mt-auto"
@@ -1408,7 +1403,6 @@ exports[`send messages, and cwitch channels 2`] = `
         >
           <div
             class="chat-messages overflow-auto mb-3"
-            id="messages-box"
           />
           <div
             class="mt-auto"
@@ -1500,7 +1494,6 @@ exports[`send messages, and cwitch channels 3`] = `
         >
           <div
             class="chat-messages overflow-auto mb-3"
-            id="messages-box"
           />
           <div
             class="mt-auto"
@@ -1596,7 +1589,6 @@ exports[`send messages, and cwitch channels 4`] = `
         >
           <div
             class="chat-messages overflow-auto mb-3"
-            id="messages-box"
           />
           <div
             class="mt-auto"
@@ -1689,7 +1681,6 @@ exports[`send messages, and cwitch channels 5`] = `
         >
           <div
             class="chat-messages overflow-auto mb-3"
-            id="messages-box"
           >
             <div>
               <b>
@@ -1789,7 +1780,6 @@ exports[`send messages, and cwitch channels 6`] = `
         >
           <div
             class="chat-messages overflow-auto mb-3"
-            id="messages-box"
           >
             <div>
               <b>

@@ -2,21 +2,20 @@
 
 import React from 'react';
 import Button from 'react-bootstrap/Button';
-import { connect } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import { actions } from '../../slices';
 
-const actionCreators = {
-  closeModal: actions.closeModal,
-};
-
 const Footer = (props) => {
   const {
-    closeModal,
     isDisabled,
     submitName,
     submitVariant = 'primary',
   } = props;
+
+  const dispatch = useDispatch();
+  const closeModal = () => dispatch(actions.closeModal());
+
   return (
     <div className="d-flex justify-content-end mt-3">
       <Button
@@ -39,4 +38,4 @@ const Footer = (props) => {
   );
 };
 
-export default connect(null, actionCreators)(Footer);
+export default Footer;

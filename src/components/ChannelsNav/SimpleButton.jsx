@@ -1,28 +1,25 @@
 // @ts-check
 
 import React from 'react';
-import { connect } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import Button from 'react-bootstrap/Button';
 
 import { actions } from '../../slices';
 
-const mapStateToProps = ({ currentChannelId }) => (
-  { currentChannelId }
-);
-
-const actionCreators = {
-  switchChannel: actions.switchChannel,
-};
-
 const ChannelButton = (props) => {
-  const { switchChannel, item, currentChannelId } = props;
+  const { item } = props;
+  // @ts-ignore
+  const { currentChannelId } = useSelector((state) => state.channelsInfo);
   const isActive = item.id === currentChannelId;
+
+  const dispatch = useDispatch();
+  const switchChannel = (payload) => () => dispatch(actions.switchChannel(payload));
 
   return (
     <Button
       className="btn-block text-left nav-link"
-      onClick={() => switchChannel(item.id)}
+      onClick={switchChannel(item.id)}
       variant={isActive ? 'primary' : 'light'}
     >
       {item.name}
@@ -30,4 +27,4 @@ const ChannelButton = (props) => {
   );
 };
 
-export default connect(mapStateToProps, actionCreators)(ChannelButton);
+export default ChannelButton;

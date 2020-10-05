@@ -1,7 +1,7 @@
 // @ts-check
 
 import React from 'react';
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import Nav from 'react-bootstrap/Nav';
 import Col from 'react-bootstrap/Col';
@@ -9,16 +9,6 @@ import Col from 'react-bootstrap/Col';
 import SimpleButton from './SimpleButton';
 import DropdownButton from './DropdownButton';
 import NavCategory from './NavCategory';
-
-import { actions } from '../../slices';
-
-const mapStateToProps = ({ channels, currentChannelId }) => (
-  { channels, currentChannelId }
-);
-
-const actionCreators = {
-  openModal: actions.openModal,
-};
 
 const renderChannelButton = (item) => {
   const ChannelButton = item.removable ? DropdownButton : SimpleButton;
@@ -30,8 +20,9 @@ const renderChannelButton = (item) => {
   );
 };
 
-const ChannelsNav = (props) => {
-  const { channels } = props;
+const ChannelsNav = () => {
+  // @ts-ignore
+  const { channels } = useSelector((state) => state.channelsInfo);
 
   return (
     <Col xs={3} className="h-100 border-right overflow-auto">
@@ -43,4 +34,4 @@ const ChannelsNav = (props) => {
   );
 };
 
-export default connect(mapStateToProps, actionCreators)(ChannelsNav);
+export default ChannelsNav;

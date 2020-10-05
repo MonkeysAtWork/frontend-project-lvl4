@@ -15,7 +15,14 @@ const eventsActions = {
   renameChannel: actions.renameChannel,
 };
 
-export default (preloadedState, userData, webSocket) => {
+export default (initState, userData, webSocket) => {
+  const { channels, currentChannelId, messages } = initState;
+
+  const preloadedState = {
+    messagesInfo: { messages },
+    channelsInfo: { channels, currentChannelId },
+  };
+
   const store = configureStore({
     reducer: rootReducer,
     preloadedState,

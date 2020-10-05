@@ -4,10 +4,10 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const slice = createSlice({
   name: 'modalInfo',
-  initialState: { open: false, type: null },
+  initialState: { open: false, type: null, item: null },
   reducers: {
-    openModal: (state, { payload }) => ({ open: true, ...payload }),
-    closeModal: () => ({ open: false, type: null }),
+    openModal: (state, { payload }) => ({ ...state, open: true, ...payload }),
+    closeModal: () => ({ open: false, type: null, item: null }),
   },
 });
 

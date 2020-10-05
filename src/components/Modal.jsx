@@ -1,18 +1,16 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Modal from 'react-bootstrap/Modal';
 
 import ChannelForm from './ChannelForm';
 import { actions } from '../slices';
 
-const mapStateToProps = ({ modalInfo: { type, open } }) => ({ modalType: type, isOpen: open });
+const OpenModal = () => {
+  const isOpen = useSelector((state) => state.modalInfo.open);
+  const modalType = useSelector((state) => state.modalInfo.type);
 
-const actionCreators = {
-  closeModal: actions.closeModal,
-};
-
-const OpenModal = (props) => {
-  const { isOpen, modalType, closeModal } = props;
+  const dispatch = useDispatch();
+  const closeModal = () => dispatch(actions.closeModal());
 
   if (!isOpen) {
     return null;
@@ -35,4 +33,4 @@ const OpenModal = (props) => {
   );
 };
 
-export default connect(mapStateToProps, actionCreators)(OpenModal);
+export default OpenModal;

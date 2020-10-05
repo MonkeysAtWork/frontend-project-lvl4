@@ -1,7 +1,7 @@
 // @ts-check
 
 import React from 'react';
-import { connect } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 import { Form, FormGroup } from 'react-bootstrap';
 
@@ -12,23 +12,11 @@ import { actions } from '../../slices';
 import routes from '../../routes.js';
 import Footer from './FormFooter';
 
-const mapStateToProps = ({ modalInfo: { item }, currentChannelId }) => ({
-  activeChannelId: currentChannelId,
-  currentChannel: item,
-});
+const ChannelDeleteForm = () => {
+  // @ts-ignore
+  const currentChannel = useSelector((state) => state.modalInfo.item);
 
-const actionCreators = {
-  closeModal: actions.closeModal,
-  switchChannel: actions.switchChannel,
-};
-
-const ChannelDeleteForm = (props) => {
-  const {
-    closeModal,
-    switchChannel,
-    currentChannel,
-    activeChannelId,
-  } = props;
+  const dispatch = useDispatch();
 
   const formik = useFormik({
     initialValues: { name: currentChannel.name },
@@ -37,11 +25,7 @@ const ChannelDeleteForm = (props) => {
         const url = routes.channelPath(currentChannel.id);
 
         await axios.delete(url);
-        if (currentChannel.id === activeChannelId) {
-          const defaultChannelId = 1;
-          switchChannel(defaultChannelId);
-        }
-        closeModal();
+        dispatch(actions.closeModal());
       } catch (err) {
         setErrors({ name: err.message });
       }
@@ -69,4 +53,4 @@ const ChannelDeleteForm = (props) => {
   );
 };
 
-export default connect(mapStateToProps, actionCreators)(ChannelDeleteForm);
+export default ChannelDeleteForm;

@@ -1,16 +1,15 @@
 // @ts-check
 
 import React from 'react';
-import { connect } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import { actions } from '../../slices';
 
-const actionCreators = {
-  openModal: actions.openModal,
-};
-
 const NavCategory = (props) => {
-  const { openModal, name } = props;
+  const { name } = props;
+
+  const dispatch = useDispatch();
+  const openModal = (payload) => () => dispatch(actions.openModal(payload));
 
   return (
     <div className="d-flex mb-2">
@@ -19,7 +18,7 @@ const NavCategory = (props) => {
         role="button"
         className="btn btn-link p-0 ml-auto"
         tabIndex={-1}
-        onClick={() => openModal({ type: 'add' })}
+        onClick={openModal({ type: 'add' })}
         onKeyDown={() => { }}
       >
         <big>
@@ -30,4 +29,4 @@ const NavCategory = (props) => {
   );
 };
 
-export default connect(null, actionCreators)(NavCategory);
+export default NavCategory;

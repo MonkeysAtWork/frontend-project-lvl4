@@ -1,5 +1,5 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import ChannelAdd from './ChannelAdd';
 import ChannelDelete from './ChannelDelete';
@@ -11,10 +11,8 @@ const forms = {
   rename: ChannelRename,
 };
 
-const mapStateToProps = ({ modalInfo: { type } }) => ({ modalType: type });
-
-const ChannelForm = (props) => {
-  const { modalType } = props;
+const ChannelForm = () => {
+  const modalType = useSelector((state) => state.modalInfo.type);
 
   if (!modalType) {
     return null;
@@ -25,4 +23,4 @@ const ChannelForm = (props) => {
   return <Form />;
 };
 
-export default connect(mapStateToProps)(ChannelForm);
+export default ChannelForm;

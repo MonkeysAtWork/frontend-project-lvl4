@@ -15,9 +15,9 @@ import faker from 'faker';
 import cookies from 'js-cookie';
 import io from 'socket.io-client';
 
-import run from './init';
+import Slack from './init';
 
-const getUserName = () => {
+const setUserName = () => {
   const userName = cookies.get('nickame');
   if (userName) {
     return userName;
@@ -43,12 +43,12 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 const userData = {
-  name: getUserName(),
+  name: setUserName(),
 };
 
 const webSocket = io();
 
 ReactDOM.render(
-  run(gon, userData, webSocket),
+  Slack(gon, userData, webSocket),
   document.getElementById('chat'),
 );
