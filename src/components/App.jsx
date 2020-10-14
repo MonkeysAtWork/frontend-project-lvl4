@@ -1,28 +1,32 @@
 // @ts-check
 
 import React from 'react';
+import { useSelector } from 'react-redux';
+import cn from 'classnames';
 
 import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 
-import MessagesBox from './MessagesBox';
-import ChannelsNav from './ChannelsNav';
-import MessageSendForm from './MessageSendForm';
+import Chat from './Chat';
+import Sidebar from './Sidebar';
+import Navbar from './Navbar';
 import Modal from './Modal';
 
-const App = () => (
-  <Row className="h-100 pb-3">
-    <ChannelsNav />
-    <Col className="h-100">
-      <div className="d-flex flex-column h-100">
-        <MessagesBox />
-        <div className="mt-auto">
-          <MessageSendForm />
-        </div>
+const App = () => {
+  // @ts-ignore
+  const isSidebarOpen = useSelector((state) => state.sidebarInfo.open);
+
+  return (
+    <>
+      <Navbar />
+      <div className="container-lg h-100 overflow-hidden">
+        <Row className="h-100 pb-3">
+          <Sidebar className={cn('h-100 border-right col-12 col-sm-4 col-lg-3, d-sm-block', { 'd-none': !isSidebarOpen })} />
+          {!isSidebarOpen && <Chat className="h-100 col-12 col-sm-8 col-lg-9" />}
+        </Row>
       </div>
-    </Col>
-    <Modal />
-  </Row>
-);
+      <Modal />
+    </>
+  );
+};
 
 export default App;

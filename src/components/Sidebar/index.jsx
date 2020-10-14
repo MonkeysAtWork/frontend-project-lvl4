@@ -4,7 +4,6 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 
 import Nav from 'react-bootstrap/Nav';
-import Col from 'react-bootstrap/Col';
 
 import SimpleButton from './SimpleButton';
 import DropdownButton from './DropdownButton';
@@ -20,17 +19,20 @@ const renderChannelButton = (item) => {
   );
 };
 
-const ChannelsNav = () => {
+const ChannelsNav = (props) => {
+  const { className } = props;
   // @ts-ignore
   const { channels } = useSelector((state) => state.channelsInfo);
 
   return (
-    <Col xs={3} className="h-100 border-right overflow-auto">
-      <NavCategory name="Channels" />
-      <Nav variant="pills" as="ul" className="flex-column" fill>
-        {channels.map(renderChannelButton)}
-      </Nav>
-    </Col>
+    <div className={className}>
+      <div className="h-100 overflow-auto">
+        <NavCategory name="Channels" />
+        <Nav variant="pills" as="ul" className="flex-column" fill>
+          {channels.map(renderChannelButton)}
+        </Nav>
+      </div>
+    </div>
   );
 };
 

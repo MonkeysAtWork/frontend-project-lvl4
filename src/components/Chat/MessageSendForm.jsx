@@ -9,8 +9,8 @@ import { Form, FormGroup, FormControl } from 'react-bootstrap';
 import axios from 'axios';
 import { useFormik } from 'formik';
 
-import routes from '../routes.js';
-import UserContext from '../UserContext';
+import routes from '../../routes.js';
+import UserContext from '../../UserContext';
 
 const MessageSendForm = () => {
   const nickname = useContext(UserContext);
@@ -41,7 +41,7 @@ const MessageSendForm = () => {
 
   return (
     <form onSubmit={formik.handleSubmit} data-testid="message-send-form">
-      <FormGroup>
+      <FormGroup className="m-0">
         <FormControl
           name="body"
           className={cn({ 'is-invalid': formik.errors.body, 'is-loading': formik.isSubmitting })}
