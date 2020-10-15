@@ -20,7 +20,7 @@ const App = () => {
       <Navbar />
       <div className="container-lg h-100 overflow-hidden">
         <Row className="h-100 pb-3">
-          <Sidebar className={cn('h-100 border-right col-12 col-sm-4 col-lg-3, d-sm-block', { 'd-none': !isSidebarOpen })} />
+          <Sidebar className={cn('h-100 border-right col-12 col-sm-4 col-lg-3 d-sm-block', { 'd-none': !isSidebarOpen })} />
           {!isSidebarOpen && <Chat className="h-100 col-12 col-sm-8 col-lg-9" />}
         </Row>
       </div>

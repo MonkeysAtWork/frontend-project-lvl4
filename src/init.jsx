@@ -25,6 +25,7 @@ export default (initState, userData, webSocket) => {
 
   const store = configureStore({
     reducer: rootReducer,
+    devTools: process.env.NODE_ENV !== 'production',
     preloadedState,
   });
 
